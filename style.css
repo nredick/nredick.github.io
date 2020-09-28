@@ -1,3 +1,7 @@
-#root {
-    background-color: #004d66
+div {
+    background-color: #004d66;
+    overflow: auto;
+    height: auto;
+    width: auto;
+    margin: auto;
 }
