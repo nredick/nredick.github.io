@@ -1,43 +1,47 @@
 ---
 # Display name
-title: Nathalie Redick
+title: Alice Wu 吳恩達
 
 # Full name (for SEO)
-first_name: Nathalie R.
-last_name: Redick
+first_name: Alice
+last_name: Wu
 
 # Status emoji
 status:
-  # todo: Change status emoji to something more relevant
-  icon: 🌋
+  icon: ☕️
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Technology Analyst
+role: Professor of Artificial Intelligence
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Morgan Stanley
-    url: https://www.morganstanley.com
+  - name: Stanford University
+    url: https://www.stanford.edu/
 
 # Short bio (displayed in user profile at end of posts)
-# todo: edit short user bio
-bio: I love everything related to ML, computational geoscience, and Billy Joel.
+bio: My research interests include distributed robotics, mobile computing and programmable matter.
 
 # Interests to show in About widget
 interests:
-  - Machine Learning
-  - Computational Geoscience
-  - Open Science
+  - Artificial Intelligence
+  - Computational Linguistics
+  - Information Retrieval
 
 # Education to show in About widget
 education:
   courses:
-    - course: BA in Computer Science, Minor in Earth & Planetary Sciences, Supp. Minor in Computer Science
-      institution: McGill University
-      year: 2023
+    - course: PhD in Artificial Intelligence
+      institution: Stanford University
+      year: 2012
+    - course: MEng in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2009
+    - course: BSc in Artificial Intelligence
+      institution: Massachusetts Institute of Technology
+      year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -46,32 +50,35 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    # link: "/#contact"
-    link: mailto:nathalie.redick@mail.mcgill.ca
-
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.com/citations?user=lvM_6HMAAAAJ
-
+    link: '/#contact'
+  - icon: twitter
+    icon_pack: fab
+    link: https://twitter.com/GeorgeCushen
+    label: Follow me on Twitter
+    display:
+      header: true
+  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
+    icon_pack: fas
+    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
   - icon: github
     icon_pack: fab
-    link: https://github.com/nredick
-
+    link: https://github.com/gcushen
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/nredick/
-
-  - icon: orcid
+    link: https://www.linkedin.com/
+  # Link to a PDF of your resume/CV.
+  # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
+  # and uncomment the lines below.
+  - icon: cv
     icon_pack: ai
-    link: https://orcid.org/0009-0005-5028-5299
+    link: uploads/resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ""
+email: ''
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Hi! I am a recent graduate of Computer Science from McGill University in Montréal, QC, Canada. I am now working as a Technology Analyst at Morgan Stanley in Montréal. During my undergrad, I was able to work on some cool research in machine learning applications for geoscience. I am very passionate about open source, open data, open science... For more details, check out my [CV](./cv).
-
+Alice Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
 {style="text-align: justify;"}
