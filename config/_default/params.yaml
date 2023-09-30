@@ -4,7 +4,6 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Appearance
-
 appearance:
   theme_day: minimal
   theme_night: minimal
@@ -12,55 +11,50 @@ appearance:
   font_size: L
 
 # SEO
-
 marketing:
   seo:
     site_type: Person
-    local_business_type: ''
-    org_name: ''
-    description: 'A highly-customizable Hugo academic resume theme powered by Wowchemy website builder.'
-    twitter: 'wowchemy'
+    local_business_type: ""
+    org_name: ""
+    description: "Personal Website for Nathalie Redick"
+    # twitter: 'wowchemy'
   analytics:
-    google_analytics: ''
-    baidu_tongji: ''
-    google_tag_manager: ''
-    microsoft_clarity: ''  
+    google_analytics: ""
+    baidu_tongji: ""
+    google_tag_manager: ""
+    microsoft_clarity: ""
   verification:
-    google: ''
-    baidu: ''
+    google: ""
+    baidu: ""
 
 # Site header
-
 header:
   navbar:
     enable: true
-    align: l
+    align: r
     show_logo: true
     show_language: false
     show_day_night: true
     show_search: true
     highlight_active_link: true
 
-# Site footer
-
+# todo: Site footer (add a connect and contact section)
 footer:
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: "© {year} Nathalie Redick."
     license:
-      enable: true
+      enable: false
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
 
 # Localization
-
 locale:
-  date_format: 'Jan 2, 2006'
-  time_format: '3:04 PM'
-  address_format: en-us
+  date_format: "02 January 2006"
+  time_format: "15:04"
+  address_format: en-ca
 
 # Site features
-
 features:
   syntax_highlighter:
     theme_light: github-light
@@ -70,38 +64,37 @@ features:
   privacy_pack:
     enable: false
   repository:
-    url: 'https://github.com/<username>/<repository>'
+    url: "https://github.com/nredick/nredick.github.io"
     content_dir: content
     branch: main
   avatar:
     gravatar: false
     shape: circle
   comment:
-    provider: ''
+    provider: ""
     disqus:
-      shortname: ''
+      shortname: ""
       show_count: true
     commento:
-      url: ''
+      url: ""
     giscus:
-      repo: ''
-      repo_id: ''
-      category: ''
-      category_id: ''
+      repo: ""
+      repo_id: ""
+      category: ""
+      category_id: ""
   search:
     provider: wowchemy
     algolia:
-      app_id: ''
-      api_key: ''
-      index_name: ''
+      app_id: ""
+      api_key: ""
+      index_name: ""
       show_logo: false
   map:
-    provider: ''
-    api_key: ''
+    provider: ""
+    api_key: ""
     zoom: 15
 
 # Extensions
-
 extensions:
   cms:
     branch: main
@@ -110,7 +103,6 @@ extensions:
     enable: true
 
 # Security
-
 security:
   # Allow frame for embedding speaker notes in slides
-  allow_frame: true
+  allow_frame: false
