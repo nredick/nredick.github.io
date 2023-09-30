@@ -5,9 +5,10 @@
 
 # Appearance
 appearance:
+  # todo: custom light and dark color schemes
   theme_day: minimal
   theme_night: minimal
-  font: minimal
+  font: minimal # todo: add better fonts
   font_size: L
 
 # SEO
