@@ -168,7 +168,7 @@ sections:
             * Led a team to create a web app, **MAISpeare** (`Python`, `HTML/CSS`) that generates a poem from an image using an LSTM.
           organization: McGill Artificial Intelligence Society (MAIS)
           organization_url: https://mcgillai.com
-          title: Best Overall Hack @ Best AI Hack for Art
+          title: Best AI Hack for Art @ MAIS Hacks 2021
           url: https://devpost.com/software/maispeare
 
         - date_start: "2020-10-01"
