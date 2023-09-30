@@ -3,8 +3,8 @@ title: Curriculum Vitae
 date: 2023-09-29
 type: landing
 
+# todo: add a table of contents
 sections:
-  # todo: find a way to add a table of contents
   - block: markdown
     content:
       title: Curriculum Vitae
@@ -104,7 +104,7 @@ sections:
     design:
       columns: "2"
 
-  # todo: add projects
+  # todo: add personal projects
   - block: portfolio
     id: projects
     content:
