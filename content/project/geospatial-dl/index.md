@@ -29,7 +29,7 @@ image:
 
 url_code: "https://github.com/nredick/geospatial-unet"
 url_pdf: ""
-url_slides: "geospatial-dl.pdf"
+url_slides: "geospatial-dl_slides.pdf"
 url_video: ""
 
 # Slides (optional).

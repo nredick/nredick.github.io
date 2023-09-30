@@ -29,7 +29,7 @@ external_link: ""
 
 url_code: ""
 url_pdf: ""
-url_slides: "unet-landslides.pdf"
+url_slides: "unet-landslides_slides.pdf"
 url_video: ""
 
 # Slides (optional).
