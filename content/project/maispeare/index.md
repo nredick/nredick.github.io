@@ -5,7 +5,7 @@ title: "MAISpeare"
 summary: "Hackathon Project created at MAIS Hacks 2021, winner of the Best AI Hack for Art."
 # authors: []
 tags: [hackathon, poetry, xgboost, neural networks, nlp, art]
-categories: ["Personal Projects"]
+categories: [Hackathons, "Personal Projects"]
 date: 2023-09-30T12:21:08-04:00
 
 # Optional external URL for project (replaces project detail page).

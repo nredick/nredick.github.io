@@ -42,7 +42,7 @@ header:
 # todo: Site footer (add a connect and contact section)
 footer:
   copyright:
-    notice: "© {year} Nathalie Redick."
+    notice: "© {year} Nathalie Redick. Site icon: [Earth icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/earth 'earth icons')"
     license:
       enable: false
       allow_derivatives: false
