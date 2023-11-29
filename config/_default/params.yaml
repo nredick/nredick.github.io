@@ -19,11 +19,11 @@ marketing:
     org_name: ""
     description: "Personal Website for Nathalie Redick"
     # twitter: 'wowchemy'
-  analytics:
-    google_analytics: "G-5KYWLXV737"
-    baidu_tongji: ""
-    google_tag_manager: "G-5KYWLXV737"
-    microsoft_clarity: ""
+  # analytics:
+  #   google_analytics: "G-5KYWLXV737"
+  #   baidu_tongji: ""
+  #   google_tag_manager: "G-5KYWLXV737"
+  #   microsoft_clarity: ""
   verification:
     google: ""
     baidu: ""
