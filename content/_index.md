@@ -109,16 +109,16 @@ sections:
     #   text: |-
     #     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mi diam, venenatis ut magna et, vehicula efficitur enim.
     #   # Contact (add or remove contact options as necessary)
-      email: nathalie.redick@mail.mcgill.ca
+      email: nrredick@ucdavis.edu
     #   phone: 888 888 88 88
     #   appointment_url: 'https://calendly.com'
       address:
         # street: 450 Serra Mall
-        city: Montréal
-        region: QC
+        city: Davis
+        region: CA
         # postcode: '94305'
         # country: Canada
-        country_code: CA
+        country_code: US
     #   directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
     #   office_hours:
     #     - 'Monday 10:00 to 13:00'
