@@ -5,12 +5,12 @@ date: 2024-10-16
 type: landing
 
 sections:
-  - block: about.biography
-    id: about
-    content:
-      title: About Me
-      # Choose a user profile to display (a folder name within `content/authors/`)
-      username: admin
+#   - block: about.biography
+#     id: about
+#     content:
+#       title: About Me
+#       # Choose a user profile to display (a folder name within `content/authors/`)
+#       username: admin
 
   # PUBLICATIONS
   - block: collection
