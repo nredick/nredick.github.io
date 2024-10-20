@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Nathalie Redick
+title: N. Redick
 
 # Full name (for SEO)
 first_name: Nathalie R.
@@ -15,26 +15,29 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Technology Analyst
+role: MSc Student in Geophysics
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Morgan Stanley
-    url: https://www.morganstanley.com
+  - name: UC Davis
+    url: https://eps.ucdavis.edu/
 
 # Short bio (displayed in user profile at end of posts)
 # todo: edit short user bio
-bio: I love everything related to ML, computational geoscience, and Billy Joel.
+# bio: I love everything related to ML, computational geoscience, and Billy Joel.
 
 # Interests to show in About widget
 interests:
+  - Computational Geophysics
   - Machine Learning
-  - Computational Geoscience
   - Open Science
 
 # Education to show in About widget
 education:
   courses:
+    - course: MSc in Geophysics
+      institution: University of California, Davis
+    #   year: 2023
     - course: BA in Computer Science, Minor in Earth & Planetary Sciences, Supp. Minor in Computer Science
       institution: McGill University
       year: 2023
@@ -47,7 +50,7 @@ social:
   - icon: envelope
     icon_pack: fas
     # link: "/#contact"
-    link: mailto:nathalie.redick@mail.mcgill.ca
+    link: mailto:nrredick@ucdavis.edu
 
   - icon: google-scholar
     icon_pack: ai

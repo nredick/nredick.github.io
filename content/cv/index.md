@@ -8,7 +8,7 @@ sections:
   - block: markdown
     content:
       title: Curriculum Vitae
-      subtitle: A more detailed, PDF version of my CV is available to view or download [here](https://nredick.github.io/portfolio/cv.pdf).
+      subtitle: A PDF version of my CV is available to view or download [here](https://nredick.github.io/portfolio/resume.pdf).
       description: ""
     design:
       spacing:
@@ -23,9 +23,18 @@ sections:
       date_format: Jan 2006
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
+        - title: MSc in *Geophysics*
+          company: University of California, Davis
+          company_url: https://eps.ucdavis.edu
+          #   company_logo: org-gc
+          location: Davis, CA
+          date_start: "2024-09-01"
+        #   date_end: "2023-05-01"
+        #   description: |2-
+        #     * GPA: 3.75/4.0
         # todo: see if it's possible to color highlight the degrees
         # todo: add mcgill logo
-        - title: B.A. in *Computer Science*, Minor in *Earth & Planetary Sciences*, Supplementary Minor in *Computer Science*
+        - title: BA in *Computer Science*, Minor in *Earth & Planetary Sciences*, Supplementary Minor in *Computer Science*
           company: McGill University
           company_url: https://www.mcgill.ca
           #   company_logo: org-gc
@@ -44,9 +53,8 @@ sections:
     content:
       title: Skills
       text:
-       "* **Programming Languages:** Python, Julia, C++, C, Java, R, Bash, MATLAB, HTML/CSS, OCaml, MIPS Assembly, MySQL
-
-       * **Tools:** Git, Linux/Unix, LaTeX, Jupyter, AWS EC2, VS Code, Numpy, Pandas, Tensorflow, PyTorch, & RESTful APIs"
+       "* **Programming Languages:** Python, Julia, C++, C, Java, DB2/SQL/MySQL, R, Bash, MATLAB, HTML/CSS, OCaml, MIPS Assembly
+       * **Tools:** Git, Linux/Unix, LATEX, Jupyter, AWS EC2, VS Code, RESTful APIs, MongoDB, Jira, Jenkins"
 
     design:
       columns: "1"
@@ -70,11 +78,10 @@ sections:
           #   company_logo: org-gc
           location: Montreal, QC
           date_start: "2023-07-31"
-          date_end: ""
+          date_end: "2024-08-16"
         #   description: |2-
-        #       Things:
-        #       * thing 1
-        #       * thing 2
+        #       * Worked collaboratively to provide agile metrics analysis for internal dev. teams globally, user support, & documentation.
+        #       * Utilized DB2 SQL, MongoDB, & Python to process metrics and maintain project infrastructure.
         - title: Data Science Intern
           company: Esri Canada (Spot On Systems)
           company_url: https://www.esri.ca/en-ca/home
@@ -82,17 +89,15 @@ sections:
           location: Remote
           date_start: "2022-05-17"
           date_end: "2022-08-05"
-          # description:
-
+        #   description:
         - title: Software Engineering Intern
-          company: Blue Spiral Interactive (Albany IT Group)
+          company: Blue Spiral Interactive/Albany IT Group
           company_url: https://bluespiral.io
           # company_logo: org-x
           location: Saratoga Springs, NY
           date_start: "2019-08-31"
           date_end: "2019-06-01"
           # description:
-
         - title: Software Development Intern
           company: Garnet River
           company_url: https://www.esri.ca/en-ca/home
