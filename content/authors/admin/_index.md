@@ -75,6 +75,6 @@ email: ""
 highlight_name: true
 ---
 
-Hi! I am a recent graduate of Computer Science from McGill University in Montréal, QC, Canada. I am now working as a Technology Analyst at Morgan Stanley in Montréal. During my undergrad, I was able to work on some cool research in machine learning applications for geoscience. I am very passionate about open source, open data, open science. For more details, check out my [CV](./cv).
+<!-- Hi! I am a recent graduate of Computer Science from McGill University in Montréal, QC, Canada. I am now working as a Technology Analyst at Morgan Stanley in Montréal. During my undergrad, I was able to work on some cool research in machine learning applications for geoscience. I am very passionate about open source, open data, open science. For more details, check out my [CV](./cv).
 
-{style="text-align: justify;"}
+{style="text-align: justify;"} -->
