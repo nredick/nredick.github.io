@@ -130,9 +130,10 @@ Now, we want to ensure that VSC knows where to find our Miniconda Python executa
 
 ![](./settings.png)
 
-Then, we add `/opt/homebrew/Caskroom/miniconda/base/bin/python` to the following setting:
+Then, we add `~/miniconda3/bin/python` to the following setting:
 
-![](./settings-conda-path.png)
+<!-- ![](./settings-conda-path.png) -->
+![alt text](settings-conda-dmg-path.png)
 
 ### Running your first Python file
 
