@@ -53,6 +53,8 @@ brew install --cask miniconda
 
 ![alt text](miniconda-install-web.png)
 
+Once you have downloaded the installer, open it and follow the instructions. You will need to agree to the license, select the installation location, and then install the software. You do not need to make any changes to the installation options.
+
 <!-- #### Make sure your computer can find & run the Python distribution
 
 Once we have Miniconda installed, we have to make sure the apps on our computer know where to find it. Depending on whether your terminal says `zsh` or `bash` (this is the type of **shell** you are using) at the beginning of the line, you will have to put it in a different place. If you're unsure, you can run both commands! *However*, most modern Macs use `zsh` by default.
@@ -101,6 +103,8 @@ brew install --cask visual-studio-code
 ![](brew-vsc.png) -->
 
 You can find the download link & some helpful instructions for VSC here: [https://code.visualstudio.com/docs/setup/mac](https://code.visualstudio.com/docs/setup/mac)
+
+Once you have downloaded VSC, open it and follow any instructions that pop up. Then, open the app!
 
 #### What's the difference between a code editor and an IDE?
 
