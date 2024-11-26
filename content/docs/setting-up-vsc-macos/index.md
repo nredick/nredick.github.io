@@ -13,7 +13,7 @@ toc: true
 
 ## Installations
 
-### What is `Homebrew`?
+<!-- ### What is `Homebrew`?
 
 We will use `Homebrew` to install both Python and Visual Studio Code.
 
@@ -26,11 +26,13 @@ To install `Homebrew`, open `Terminal.app` on your Mac and paste in the followin
 ```
 
 ![Install Homebrew](install-brew.png)
-> Leave the terminal open for the next few steps!
+> Leave the terminal open for the next few steps! -->
 
 ### Installing Python
 
-We will use `Homebrew` to install a Python **distribution** as well.
+<!-- We will use `Homebrew` to install a Python **distribution** as well. -->
+
+We will download our Python **distribution** from the [Miniconda website](https://docs.conda.io/en/latest/miniconda.html). Click on the link for the MacOS (Apple Silicon) installer and download the file.
 
 > A distribution of a language is a bundle that contains an implementation of Python along with a bunch of libraries or tools.
 
@@ -41,15 +43,17 @@ Miniconda is a good distribution because:
 - It is relatively light-weight, so it won't take up a lot of stuff on your computer
 - It contains `conda`, which is very good at installing python packages (like `numpy`, `pygmt`) and for managing **virtual environments** (which we'll talk about later)
 
-We will use `Homebrew` to install Miniconda, so enter the following command in the terminal:
+<!-- We will use `Homebrew` to install Miniconda, so enter the following command in the terminal:
 
 ``` sh
 brew install --cask miniconda
 ```
 
-![](brew-miniconda.png)
+![](brew-miniconda.png) -->
 
-#### Make sure your computer can find & run the Python distribution
+![alt text](miniconda-install-web.png)
+
+<!-- #### Make sure your computer can find & run the Python distribution
 
 Once we have Miniconda installed, we have to make sure the apps on our computer know where to find it. Depending on whether your terminal says `zsh` or `bash` (this is the type of **shell** you are using) at the beginning of the line, you will have to put it in a different place. If you're unsure, you can run both commands! *However*, most modern Macs use `zsh` by default.
 
@@ -80,6 +84,7 @@ Then, we want to make sure `conda` always starts up when we open a new terminal 
 ``` sh
 echo 'eval "$(conda "shell.$(basename "${SHELL}")" hook)"' >> ~/.bash_profile
 ```
+-->
 
 ### Installing Visual Studio Code
 
@@ -87,13 +92,16 @@ Now that we have a Python distribution installed, we need somewhere we can read,
 
 Visual Studio Code (VSCode, VSC) is one of *the most popular* ways to write code, not just Python! It is a light-weight **code editor** ([What's the difference between a code editor and an IDE?](#whats-the-difference-between-a-code-editor-and-an-ide)).
 
-We will use `Homebrew` to install VSCode also! Like before, enter the following command in your terminal:
+<!-- We will use `Homebrew` to install VSCode also! Like before, enter the following command in your terminal:
 
 ``` sh
 brew install --cask visual-studio-code
 ```
 
-![](brew-vsc.png)
+![](brew-vsc.png) -->
+
+You can find the download link & some helpful instructions for VSC here: [https://code.visualstudio.com/docs/setup/mac](https://code.visualstudio.com/docs/setup/mac)
+
 #### What's the difference between a code editor and an IDE?
 
 > "IDE" stands for "Integrated Development Environment" is a fully-featured place to develop code. They have built-in debuggers, syntax highlighting, etc.
@@ -104,9 +112,9 @@ On the other hand, a code editor is very light-weight an easy to modify. They ty
 
 Importantly, VSCode is free, and so are its extensions. While there are free versions of IDEs, some of the features are behind paywalls.
 
-# Setting up your coding environment
+## Setting up your coding environment
 
-## Adding Python-relevant extensions to VSC
+### Adding Python-relevant extensions to VSC
 
 To be able to read, write, and run Python, we will need to install some extensions.
 
@@ -126,7 +134,7 @@ Then, we add `/opt/homebrew/Caskroom/miniconda/base/bin/python` to the following
 
 ![](./settings-conda-path.png)
 
-## Running your first Python file
+### Running your first Python file
 
 Now, it is time to see if everything is working. First, let's create a new Python file and name it `fibonacci.py`:
 
@@ -156,7 +164,7 @@ Now, we can use the button in the top right corner to run the file. This will op
 
 ![](./run-fib.png)
 
-## Python virtual environments
+### Python virtual environments
 
 In the last example, we used our `conda` *base* environment to run the code. However, we ***never*** want to install packages in our base environment. If we accidentally mess up the base, it can cause a lot of (very frustrating issues). So, we use **virtual environments**.
 
@@ -219,7 +227,7 @@ If you want to check which packages are in your venv, you can run `conda list`. 
 
 > The other columns are the **version** of `pygmt`, the **build**, and the **channel** of `conda` we installed it from.
 
-## Running your first Jupyter Notebook
+### Running your first Jupyter Notebook
 
 Now that we have a working virtual environment, we can start working within our venv in a Jupyter Notebook (any file with a `*.ipynb` extension).
 
@@ -247,19 +255,19 @@ Then, your code will run!
 
 ![](./notebook-run.png)
 
-# Pro-tips
+## Pro-tips
 
-## Using the command palette
+### Using the command palette
 
 In VSC, the command palette is your best friend. Becoming comfortable with the `cmd + shift + p` keyboard shortcut will make development much easier.
 
 The command palette will search as you type, allowing you to find and use the commands provided by both VSC natively and all of the extensions you have installed.
 
-## Accessing (and hiding) the integrated terminal
+### Accessing (and hiding) the integrated terminal
 
 Sometimes, you want to hide (or show) the integrated terminal window. It have be helpful to minimize it to maximize editor space. For showing or hiding the terminal (without ending the shell session), you can use `cmd + j`.
 
-## Exploring settings
+### Exploring settings
 
 You will want to take some time to explore the settings of VSC and the extensions you have installed. It may be overwhelming at first, but it will give you a better idea of what VSC and your extensions can do.
 
@@ -272,7 +280,7 @@ Some useful things to look for may be:
 
 ![](./theme.png)
 
-## Other useful extensions
+### Other useful extensions
 
 VSC has ***infinitely*** many useful extensions. Take some time to search in the extensions pane for things that might be useful. I have included ones I use all the time below.
 
@@ -284,6 +292,6 @@ VSC has ***infinitely*** many useful extensions. Take some time to search in the
 
 ![](./intellisense.png)
 
-## Learning your other keyboard shortcuts
+### Learning your other keyboard shortcuts
 
 There are so many useful shortcuts that will make it possible & easier to do useful things. There are lots of "cheat sheets" online that explain what these are.
