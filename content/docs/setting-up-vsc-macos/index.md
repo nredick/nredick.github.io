@@ -7,6 +7,8 @@ title: "Setting up VSCode and Python for MacOS"
 tags: [tutorial, python, vscode, macos]
 categories: [Tutorials]
 date: 2024-11-25
+
+toc: true
 ---
 
 ## Installations
@@ -24,7 +26,7 @@ To install `Homebrew`, open `Terminal.app` on your Mac and paste in the followin
 ```
 
 ![Install Homebrew](install-brew.png)
-\> Leave the terminal open for the next few steps!
+> Leave the terminal open for the next few steps!
 
 ### Installing Python
 
@@ -47,7 +49,7 @@ brew install --cask miniconda
 
 ![](brew-miniconda.png)
 
-\#### Make sure your computer can find & run the Python distribution
+#### Make sure your computer can find & run the Python distribution
 
 Once we have Miniconda installed, we have to make sure the apps on our computer know where to find it. Depending on whether your terminal says `zsh` or `bash` (this is the type of **shell** you are using) at the beginning of the line, you will have to put it in a different place. If you're unsure, you can run both commands! *However*, most modern Macs use `zsh` by default.
 
@@ -116,7 +118,7 @@ Then, we want to open up the **"extensions"** panel and install the extensions y
 
 ![](py-ext.png)
 
-Now, we want to ensure that VSC knows where to find our Miniconda Python executable. To do so, open up settings (the easiest way to do so is `cmd + ,`), or the top navigation bar that says: "Code" \> "Settings..."
+Now, we want to ensure that VSC knows where to find our Miniconda Python executable. To do so, open up settings (the easiest way to do so is `cmd + ,`), or the top navigation bar that says: "Code" > "Settings..."
 
 ![](./settings.png)
 
