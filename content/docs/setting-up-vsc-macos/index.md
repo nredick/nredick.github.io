@@ -213,7 +213,7 @@ A window will ask you if you want to use this environment in the current workspa
 
 In our global environments pane, we can now see the environment we created. Now, we want to install packages that we want to use. To do so, you will need to open a terminal shell with the venv *activated*. Our package manager extension can do this for us:
 
-![](./venv-terminal.png)
+![](./term-venv.png)
 
 This will run the command to activate the environment for you and an **integrated terminal** (one that is inside of our code editor) will pop up.
 
