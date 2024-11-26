@@ -10,3 +10,4 @@ go.sum
 .hugo_build.lock
 _content
 _config
+content/authors/admin/old_avatar.jpg

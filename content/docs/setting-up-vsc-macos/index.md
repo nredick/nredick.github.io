@@ -147,7 +147,7 @@ We also want to tell the Code Runner extension to use the Python interpreter fro
 }
 ```
 
-You can find this setting by searching for `code-runner.executorMap` in the settings search bar (ooen settings with `cmd + ,`), then clicking the link to edit in `settings.json`.
+You can find this setting by searching for `code-runner.executorMap` in the settings search bar (open settings with `cmd + ,`), then clicking the link to edit in `settings.json`.
 
 ![Setting up the Code Runner executor map](edit-json-settings.png)
 
