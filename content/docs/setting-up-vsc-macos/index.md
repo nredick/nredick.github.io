@@ -139,6 +139,20 @@ Then, we add `~/miniconda3/bin/python` to the following setting:
 <!-- ![](./settings-conda-path.png) -->
 ![alt text](settings-conda-dmg-path.png)
 
+We also want to tell the Code Runner extension to use the Python interpreter from our Miniconda distribution. To do so, we need to add the following line to our VSC settings:
+
+``` json
+"code-runner.executorMap": {
+    "python": "python $fullFileName",
+}
+```
+
+You can find this setting by searching for `code-runner.executorMap` in the settings search bar (ooen settings with `cmd + ,`), then clicking the link to edit in `settings.json`.
+
+![alt text](edit-json-settings.png)
+
+Then, make sure VSC will use your terminal for outputs. You can do this by searching for `code-runner.runInTerminal` in the settings search bar and making sure it is set to `true`.
+
 ### Running your first Python file
 
 Now, it is time to see if everything is working. First, let's create a new Python file and name it `fibonacci.py`:
