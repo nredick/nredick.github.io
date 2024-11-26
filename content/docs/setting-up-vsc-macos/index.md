@@ -51,7 +51,7 @@ brew install --cask miniconda
 
 ![](brew-miniconda.png) -->
 
-![alt text](miniconda-install-web.png)
+![Downloading the miniconda dmg installer](miniconda-install-web.png)
 
 Once you have downloaded the installer, open it and follow the instructions. You will need to agree to the license, select the installation location, and then install the software. You do not need to make any changes to the installation options.
 
@@ -124,20 +124,20 @@ To be able to read, write, and run Python, we will need to install some extensio
 
 First, open up VSC. It will look something like this:
 
-![](editor.png)
+![A first look at the VSC editor](editor.png)
 
 Then, we want to open up the **"extensions"** panel and install the extensions you see in the image below:
 
-![](py-ext.png)
+![Adding Python extensions from the extensions pane](py-ext.png)
 
 Now, we want to ensure that VSC knows where to find our Miniconda Python executable. To do so, open up settings (the easiest way to do so is `cmd + ,`), or the top navigation bar that says: "Code" > "Settings..."
 
-![](./settings.png)
+![Opening VSC settings for the first time](./settings.png)
 
 Then, we add `~/miniconda3/bin/python` to the following setting:
 
 <!-- ![](./settings-conda-path.png) -->
-![alt text](settings-conda-dmg-path.png)
+![Adding the miniconda path to our settings](settings-conda-dmg-path.png)
 
 We also want to tell the Code Runner extension to use the Python interpreter from our Miniconda distribution. To do so, we need to add the following line to our VSC settings:
 
@@ -149,7 +149,7 @@ We also want to tell the Code Runner extension to use the Python interpreter fro
 
 You can find this setting by searching for `code-runner.executorMap` in the settings search bar (ooen settings with `cmd + ,`), then clicking the link to edit in `settings.json`.
 
-![alt text](edit-json-settings.png)
+![Setting up the Code Runner executor map](edit-json-settings.png)
 
 Then, make sure VSC will use your terminal for outputs. You can do this by searching for `code-runner.runInTerminal` in the settings search bar and making sure it is set to `true`.
 
@@ -157,7 +157,7 @@ Then, make sure VSC will use your terminal for outputs. You can do this by searc
 
 Now, it is time to see if everything is working. First, let's create a new Python file and name it `fibonacci.py`:
 
-![](./new-file.png)
+![Creating a file](./new-file.png)
 
 Let's create a function that returns the *nth* value in the Fibonacci sequence.
 
@@ -174,14 +174,14 @@ def fibonacci(n):
 print(fibonacci(10))
 ```
 
-![](./fib.png)
+![Fibonacci code example](./fib.png)
 
 Then, we need to set the **interpreter** (AKA, what python environment are you using?). You may see this option in the bottom bar (blue in the image above). Alternatively, you can access it from the **command palette** using the keyboard shortcut `cmd + shift + p`. For now, we want to use our `conda` *base* environment. It does not matter if the Python version is the same as shown in the photo below.
 
 ![Selecting the interpreter](./select-interp.png)
 Now, we can use the button in the top right corner to run the file. This will open a terminal shell within VSC that outputs the result of the code we wrote.
 
-![](./run-fib.png)
+![Fibonacci result](./run-fib.png)
 
 ### Python virtual environments
 
@@ -193,31 +193,31 @@ In the last example, we used our `conda` *base* environment to run the code. How
 
 First, we want to open one of the extensions we installed (*donjayamanne.python-environment-manager*):
 
-![](./create-venv.png)
+![Create a conda venv](./create-venv.png)
 
 Then, under global environments, under `conda`, we will use the `+` to create a new globally-accessible Python environment.
 
 A window will pop up asking you to select the version of Python you want the environment to use, typically you would select the newest version.
 
-![](./py-venv-version.png)
+![Selecting the Python version for the venv](./py-venv-version.png)
 
 Then, you will be asked to give the environment a name:
 
-![](./name-venv.png)
+![Naming the venv](./name-venv.png)
 
-![](./creating-env-popup.png)
+![Venv creation confirmation pop up](./creating-env-popup.png)
 
 A window will ask you if you want to use this environment in the current workspace, you should say yes. This sets your interpreter to the new environment we created.
 
-![](./conda-select-interp.png)
+![Select conda as the VSC interpreter](./conda-select-interp.png)
 
 In our global environments pane, we can now see the environment we created. Now, we want to install packages that we want to use. To do so, you will need to open a terminal shell with the venv *activated*. Our package manager extension can do this for us:
 
-![](./term-venv.png)
+![Activating the conda venv in the terminal](./term-venv.png)
 
 This will run the command to activate the environment for you and an **integrated terminal** (one that is inside of our code editor) will pop up.
 
-![](./activate-venv.png)
+![Activated venv](./activate-venv.png)
 
 Now we can run `conda` commands. We want to install a few different libraries:
 
@@ -238,11 +238,11 @@ The command may take several seconds to run, especially when you are installing 
 
 You will see this output if the installs are successful:
 
-![](./conda-success.png)
+![Conda package install success](./conda-success.png)
 
 If you want to check which packages are in your venv, you can run `conda list`. This will include ***a lot*** of libraries you don't remember installing. These are called **dependencies**, they are packages that the libraries you asked `conda` to install need to be able to run properly. If you want to search for specific libraries in the list, you can use this command: `conda list | grep <name of package>`
 
-![](./find-lib-venv.png)
+![Listing installed packages](./find-lib-venv.png)
 
 > The other columns are the **version** of `pygmt`, the **build**, and the **channel** of `conda` we installed it from.
 
@@ -252,27 +252,27 @@ Now that we have a working virtual environment, we can start working within our 
 
 First, use the command palette (`cmd + shift + p`) to run the command for creating a new notebook. The command palette will search as you type.
 
-![](./create-ipynb.png)
+![Creating a Jupyter Notebook](./create-ipynb.png)
 
 Now, we have an empty notebook file. First, we need to tell the notebook what Python venv to use when running code. Notebooks call this the **kernel**. You will see a button in the upper right corner for selecting the kernel.
 
-![](./select-kernel.png)
+![Selecting the notebook kernel](./select-kernel.png)
 
 We want to select the venv we just installed our packages into:
 
-![](./select-venv.png)
+![Set kernel to created venv](./select-venv.png)
 
 Now, we can add some code to our cells.
 
-![](./notebook-w-code.png)
+![Add code to notebook](./notebook-w-code.png)
 
 Then, you can use the *run all* button to run all of the cells. You will notice that when you first run your notebook with a new environment, you will be asked to install the `ipykernel` library. This is what your venv needs to interpret and run cells, so let it install the library.
 
-![](./install-ipykernel.png)
+![Install ipykernel in conda venv](./install-ipykernel.png)
 
 Then, your code will run!
 
-![](./notebook-run.png)
+![Run the notebook](./notebook-run.png)
 
 ## Pro-tips
 
@@ -297,19 +297,19 @@ Some useful things to look for may be:
 - changing the default font & font size
 - changing the theme!!
 
-![](./theme.png)
+![Changing the editor theme](./theme.png)
 
 ### Other useful extensions
 
 VSC has ***infinitely*** many useful extensions. Take some time to search in the extensions pane for things that might be useful. I have included ones I use all the time below.
 
-![](./rainbow-csv.png)
+![Rainbow CSV](./rainbow-csv.png)
 
-![](./data-wrangler.png)
+![Data Wrangler](./data-wrangler.png)
 
-![](./md-allinone.png)
+![MD All-in_one](./md-allinone.png)
 
-![](./intellisense.png)
+![Intellisense](./intellisense.png)
 
 ### Learning your other keyboard shortcuts
 
