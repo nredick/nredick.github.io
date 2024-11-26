@@ -2,7 +2,6 @@
 # Documentation: https://wowchemy.com/docs/managing-content/
 
 title: "Setting up VSCode and Python for MacOS"
-# summary: "Hackathon Project created at MAIS Hacks 2021, winner of the Best AI Hack for Art."
 # authors: []
 tags: [tutorial, python, vscode, macos]
 categories: [Tutorials]
