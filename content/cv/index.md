@@ -8,7 +8,7 @@ sections:
   - block: markdown
     content:
       title: Curriculum Vitae
-      subtitle: A PDF version of my CV is available to view or download [here](https://nredick.github.io/portfolio/resume.pdf).
+      subtitle: A PDF version of my CV is available to view or download [here](https://nredick.github.io/curriculum-vitae/resume.pdf).
       description: ""
     design:
       spacing:
