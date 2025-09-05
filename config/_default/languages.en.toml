@@ -1,0 +1,29 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = "N. Redick"
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+
+[[params.author.links]]
+bluesky = "https://bsky.app/profile/nredick.bsky.social"
+email = "mailto:nrredick@ucdavis.edu"
+github = "https://github.com/nredick"
+google-scholar = "https://scholar.google.com/citations?user=lvM_6HMAAAAJ&hl=en"
+linkedin = "https://www.linkedin.com/in/nredick"
+orcid = "https://orcid.org/0009-0005-5028-5299"
+
+["params.author"]
+name = "Nathalie Redick"
+pronouns = "she/her"
+image = "avatar.jpg"
+headline = "MSc student in Geophysics"
+bio = """
+I am a graduate student at the University of California—Davis in the geodynamics lab. Currently, I am working on improving slab shape models of the Cascadia subduction zone by linking predictions of the mantle flow around the slab from geodynamic models to seismic observations.
+
+I am interested in marine and volcano geophysics, seismology (especially seismic imaging and tomography), and any opportunity to be in the field."""

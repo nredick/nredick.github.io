@@ -1,0 +1,103 @@
+<div class="relative pt-16 pb-32">
+    <div class="relative">
+        <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:gap-12 lg:px-8" style="grid-template-columns: 2fr 3fr;">
+            <!-- Left Column - Profile -->
+            <div class="mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+                <div class="flex flex-col items-center justify-center text-center">
+                    <!-- Author Image -->
+                    {{ with .Site.Params.Author.image }}
+                    {{ $authorImage := "" }}
+                    {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+                    {{ $authorImage = resources.GetRemote . }}
+                    {{ else }}
+                    {{ $authorImage = resources.Get . }}
+                    {{ end }}
+                    {{ if $authorImage }}
+                    {{ $authorImage = $authorImage.Fill "384x384 q96" }}
+                    <img class="mb-8 rounded-full h-48 w-48" width="192" height="192"
+                        alt="{{ $.Site.Params.Author.name | default " Author" }}"
+                        src="{{ $authorImage.RelPermalink }}" />
+                    {{ end }}
+                    {{ end }}
+
+                    <!-- Author Name -->
+                    <h1 class="mb-2 text-3xl font-semibold text-neutral-800 dark:text-neutral-100">
+                        {{ .Site.Params.Author.name | default .Site.Title }}
+                    </h1>
+
+
+
+                    <!-- Author Headline -->
+                    {{ with .Site.Params.Author.headline }}
+                    <h2 class="mt-0 mb-2 text-lg text-neutral-500 dark:text-neutral-300">
+                        {{ . | markdownify }}
+                    </h2>
+                    {{ end }}
+
+                    <!-- Author Pronouns -->
+                    {{ with .Site.Params.Author.pronouns }}
+                    <h2 class="mt-0 mb-1 text-lg text-neutral-400 dark:text-neutral-500">
+                        ({{ . | markdownify }})
+                    </h2>
+                    {{ end }}
+
+                    <!-- Social Links -->
+                    <div class="mt-3 mb-6 text-2xl">
+                        {{ with .Site.Params.Author.links }}
+                        <div class="flex flex-wrap justify-center">
+                            {{ range $links := . }}
+                            {{ range $name, $url := $links }}
+                            <a class="px-1 hover:text-primary-400 text-primary-800 dark:text-primary-200"
+                                href="{{ $url }}" target="_blank" aria-label="{{ $name | title }}"
+                                rel="me noopener noreferrer">{{ partial "icon.html" $name }}</a>
+                            {{ end }}
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - About & Education -->
+            <div class="mt-6 sm:mt-16 lg:mt-0 mx-auto max-w-xl px-4 sm:px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
+                <article class="max-w-full prose dark:prose-invert">
+                    {{ with .Title }}
+                    <header>
+                        <h1>{{ . | emojify }}</h1>
+                    </header>
+                    {{ end }}
+
+                    <!-- About Section -->
+                    <section class="mb-8">
+                        {{ with .Site.Params.Author.bio }}
+                        <p>{{ . | markdownify | safeHTML }}</p>
+                        {{ end }}
+                        <!-- Additional about content from page content -->
+                        {{ .Content }}
+                    </section>
+
+                    <!-- Education Section -->
+                    <section>
+                        <div class="text-lg font-bold mb-3">Education</div>
+                        <!-- You can add education content here or pull from front matter -->
+                        {{ with .Params.education }}
+                        {{ range . }}
+                        <div class="mb-2 flex items-start gap-3">
+                            <div class="flex-shrink-0 pt-1">{{ partial "icon.html" "graduation-cap" }}</div>
+                            <div class="flex-1 ml-2">
+                                <div class="text-base font-semibold">{{ .degree }}</div>
+                                <div class="text-sm text-neutral-600 dark:text-neutral-400">{{ .institution }} • {{
+                                    .year }}</div>
+                                {{ with .description }}
+                                <div class="text-sm">{{ . }}</div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                        {{ end }}
+                    </section>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
