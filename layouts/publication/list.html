@@ -1,5 +1,6 @@
 {{ define "main" }}
-<h1 class="text-primary-700 dark:text-primary-400">{{ .Title }}</h1>
+{{ $siteAuthor := site.Params.author.name }}
+<h1>{{ .Title }}</h1>
 
 <ul class="publications-list space-y-1">
     {{ range .Pages.ByDate.Reverse }}
@@ -8,10 +9,13 @@
 
         {{/* Main citation line: authors, title, journal, year */}}
         <p class="citation">
-            {{ with .Params.authors }}
-            <strong class="text-neutral-700 dark:text-neutral-300">{{ delimit . ", " }}</strong><span
+            {{ with .Params.authors }}{{- $nameParts := split $siteAuthor " " }}{{- $firstName := index $nameParts 0
+            }}{{- $lastName := index $nameParts -1 }}{{- range $index, $author := . }}{{- if $index }}, {{ end }}{{-
+            $authorParts := split $author " " }}{{- $authorFirst := index $authorParts 0 }}{{- $authorLast := index
+            $authorParts -1 }}{{- if and (eq $authorFirst $firstName) (eq $authorLast $lastName) }}<strong
+                class="text-neutral-700 dark:text-neutral-300">{{ $author }}</strong>{{- else }}<span
+                class="text-neutral-700 dark:text-neutral-300">{{ $author }}</span>{{- end }}{{- end }}{{- end }}<span
                 class="text-neutral-500 dark:text-neutral-400">.</span>
-            {{ end }}
             <em><a href="{{ .Permalink }}"
                     class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200">{{
                     .Title }}</a></em><span class="text-neutral-500 dark:text-neutral-400">.</span>
