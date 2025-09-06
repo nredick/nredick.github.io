@@ -7,30 +7,30 @@
     <li
         class="publication-item bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700 border-l-4 border-l-primary-500 hover:border-l-primary-600 dark:hover:border-l-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-750 transition-all duration-200 hover:shadow-md shadow-sm">
 
-        {{/* Main citation line: authors, title, journal, year */}}
-        <p class="citation">
-            {{ with .Params.authors }}{{- $nameParts := split $siteAuthor " " }}{{- $firstName := index $nameParts 0
-            }}{{- $lastName := index $nameParts -1 }}{{- range $index, $author := . }}{{- if $index }}, {{ end }}{{-
-            $authorParts := split $author " " }}{{- $authorFirst := index $authorParts 0 }}{{- $authorLast := index
-            $authorParts -1 }}{{- if and (eq $authorFirst $firstName) (eq $authorLast $lastName) }}<strong
-                class="text-neutral-700 dark:text-neutral-300">{{ $author }}</strong>{{- else }}<span
-                class="text-neutral-700 dark:text-neutral-300">{{ $author }}</span>{{- end }}{{- end }}{{- end }}<span
-                class="text-neutral-500 dark:text-neutral-400">.</span>
-            <em><a href="{{ .Permalink }}"
-                    class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200">{{
-                    .Title }}</a></em><span class="text-neutral-500 dark:text-neutral-400">.</span>
-            {{ with .Params.journal }}
-            <span class="text-secondary-600 dark:text-secondary-400 italic">{{ . }}</span><span
-                class="text-neutral-500 dark:text-neutral-400">.</span>
-            {{ end }}
-            {{ with .Date }}
-            <span class="text-neutral-600 dark:text-neutral-400 font-medium">{{ .Format "2006" }}</span><span
-                class="text-neutral-500 dark:text-neutral-400">.</span>
-            {{ end }}
+        <p class="citation text-neutral-700 dark:text-neutral-300 text-base leading-relaxed">
+            {{ $nameParts := split $siteAuthor " " }}
+            {{ $firstName := index $nameParts 0 }}
+            {{ $lastName := index $nameParts -1 }}
+            {{- range $index, $author := .Params.authors -}}
+            {{- if $index }}, {{ end -}}
+            {{- $authorParts := split $author " " -}}
+            {{- $authorFirst := index $authorParts 0 -}}
+            {{- $authorLast := index $authorParts -1 -}}
+            {{- if and (eq $authorFirst $firstName) (eq $authorLast $lastName) -}}
+            <strong>{{ $author }}</strong>
+            {{- else -}}
+            {{ $author }}
+            {{- end -}}
+            {{- end }}
+            {{ with .Date }} <span class="text-neutral-500 dark:text-neutral-400">({{ .Format "2006" }})</span>{{ end
+            }}.
+            <a href="{{ .Permalink }}"
+                class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200 hover:underline">{{
+                .Title }}</a>.
+            {{ with .Params.journal }} <em class="text-secondary-600 dark:text-secondary-400">{{ . }}</em>.{{ end }}
         </p>
 
-        {{/* Links underneath citation using academicons */}}
-        <div class="mt-2">
+        <div class="mt-3 flex items-center">
             {{ partial "links.html" . }}
         </div>
 
