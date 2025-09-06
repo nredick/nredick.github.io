@@ -4,6 +4,9 @@
 [goldmark]
   [goldmark.renderer]
     unsafe = true
+  [goldmark.parser]
+    autoHeadingID = true
+    autoHeadingIDType = "github"
 
   [goldmark.extensions]
     [goldmark.extensions.passthrough]

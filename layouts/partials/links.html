@@ -20,7 +20,7 @@ Each link object can have:
     {{- if hasPrefix .icon "ai" -}}
     <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
         target="_blank"><i class="ai {{ .icon }}"></i>{{ with
-        .name }} {{ . }}{{ end }}</a>
+        .name }} <span class="text-sm">{{ . }}</span>{{ end }}</a>
     {{- else if hasPrefix .icon "fa" -}}
     {{- $iconClass := .icon -}}
     {{- if and (hasPrefix .icon "fa-") (not (or (hasPrefix .icon "fa-solid") (hasPrefix .icon "fa-regular") (hasPrefix
@@ -29,16 +29,16 @@ Each link object can have:
     {{- end -}}
     <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
         target="_blank"><i class="{{ $iconClass }}"></i>{{ with
-        .name }} {{ . }}{{ end }}</a>
+        .name }} <span class="text-sm">{{ . }}</span>{{ end }}</a>
     {{- else -}}
     <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
         target="_blank">{{ partial "icon.html" .icon }}{{ with
-        .name }} {{ . }}{{ end }}</a>
+        .name }} <span class="text-sm">{{ . }}</span>{{ end }}</a>
     {{- end -}}
     {{- else -}}
     <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
         target="_blank">{{ partial "icon.html" "link" }}{{ with
-        .name }} {{ . }}{{ end }}</a>
+        .name }} <span class="text-sm">{{ . }}</span>{{ end }}</a>
     {{- end -}}
     {{- end -}}
     {{- end -}}

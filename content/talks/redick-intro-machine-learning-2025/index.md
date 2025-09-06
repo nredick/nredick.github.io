@@ -14,9 +14,9 @@ links:
 - url: https://github.com/nredick/intro-to-ml-GVP
 - icon: fa-file-pdf
   url: slides.pdf
-- name: Interactive slides
+- icon: "fa-book"
+  url: ../notes/intro-to-ml
+- name: Slides
   icon: fa-book-open
   url: https://nredick.github.io/intro-to-ml-GVP/
-# - icon: "fa-newspaper"
-#   url: ../post/intro-to-ml
 ---

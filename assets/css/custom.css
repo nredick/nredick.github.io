@@ -93,6 +93,19 @@ main h1 {
     line-height: 1;
 }
 
+/* Ensure icons maintain their size regardless of text size */
+.pub-link i,
+.pub-link svg {
+    font-size: 1.5rem;
+    /* Keep icons at text-2xl size */
+}
+
+/* Text next to icons should be smaller */
+.pub-link .text-sm {
+    font-size: 0.875rem;
+    /* text-sm equivalent */
+}
+
 /* Publication list spacing and styling */
 .publications-list {
     list-style: none;
@@ -194,4 +207,36 @@ main h1 {
 
 .publication-single .flex:empty {
     display: none;
+}
+
+/* Table of Contents (TOC) highlighting improvements */
+#TableOfContents a.active {
+    color: rgb(var(--color-primary-600)) !important;
+    font-weight: 600;
+    background-color: rgb(var(--color-primary-50));
+    border-radius: 0.25rem;
+    padding: 0.125rem 0.25rem;
+    border-left: 3px solid rgb(var(--color-primary-500));
+}
+
+.dark #TableOfContents a.active {
+    color: rgb(var(--color-primary-400)) !important;
+    background-color: rgb(var(--color-primary-900));
+    border-left-color: rgb(var(--color-primary-400));
+    text-decoration: none !important;
+}
+
+#TableOfContents a {
+    transition: all 0.2s ease;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    display: block;
+}
+
+#TableOfContents a:hover {
+    background-color: rgb(var(--color-neutral-100));
+}
+
+.dark #TableOfContents a:hover {
+    background-color: rgb(var(--color-neutral-800));
 }
