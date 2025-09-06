@@ -1,36 +1,36 @@
 [[main]]
-none = "none"
+    none = "none"
 
 [[main]]
-name = "Posts"
-identifier = "posts"
-weight = 12
+    identifier = "posts"
+    name       = "Posts"
+    weight     = 12
 
 [[main]]
-name = "Docs"
-pageRef = "docs"
-identifier = "docs"
-parent = "posts"
-weight = 12
+    identifier = "docs"
+    name       = "Docs"
+    pageRef    = "docs"
+    parent     = "posts"
+    weight     = 12
 
 [[main]]
-name = "Notes"
-pageRef = "notes"
-identifier = "notes"
-parent = "posts"
-weight = 20
+    identifier = "notes"
+    name       = "Notes"
+    pageRef    = "notes"
+    parent     = "posts"
+    weight     = 20
 
 [[main]]
-name = "Papers"
-pageRef = "papers"
-identifier = "qx9XY0i3mw"
-weight = 10
+    identifier = "qx9XY0i3mw"
+    name       = "Papers"
+    pageRef    = "papers"
+    weight     = 10
 
 [[main]]
-name = "Talks"
-pageRef = "talks"
-identifier = "Xt65JPJG1J"
-weight = 11
+    identifier = "Xt65JPJG1J"
+    name       = "Talks"
+    pageRef    = "talks"
+    weight     = 11
 
 [[footer]]
-none = "none"
+    none = "none"

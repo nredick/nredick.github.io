@@ -2,22 +2,22 @@
 # These settings are required for the theme to function.
 
 [goldmark]
-  [goldmark.renderer]
-    unsafe = true
-  [goldmark.parser]
-    autoHeadingID = true
-    autoHeadingIDType = "github"
+    [goldmark.renderer]
+        unsafe = true
+    [goldmark.parser]
+        autoHeadingID     = true
+        autoHeadingIDType = "github"
 
-  [goldmark.extensions]
-    [goldmark.extensions.passthrough]
-      enable = true
-      [goldmark.extensions.passthrough.delimiters]
-        block = [['\[', '\]'], ['$$', '$$']]
-        inline = [['\(', '\)']]
+    [goldmark.extensions]
+        [goldmark.extensions.passthrough]
+            enable = true
+            [goldmark.extensions.passthrough.delimiters]
+                block  = [['\[', '\]'], ['$$', '$$']]
+                inline = [['\(', '\)']]
 
 [highlight]
-  noClasses = false
+    noClasses = false
 
 [tableOfContents]
-  startLevel = 2
-  endLevel = 4
+    endLevel   = 4
+    startLevel = 2

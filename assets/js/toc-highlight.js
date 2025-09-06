@@ -1,5 +1,5 @@
 // Custom Table of Contents highlighting using Intersection Observer
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const toc = document.querySelector('#TableOfContents');
     if (!toc) {
         console.log('TOC element not found');
@@ -7,15 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const tocLinks = toc.querySelectorAll('a[href^="#"]');
-    
+
     // Look for Blowfish anchor elements (div.anchor with id) and their parent headings
     const anchors = document.querySelectorAll('.anchor[id]');
     const headings = Array.from(anchors).map(anchor => anchor.parentElement);
-    
+
     console.log('Found TOC links:', tocLinks.length);
     console.log('Found anchor elements:', anchors.length);
     console.log('Found headings:', headings.length);
-    
+
     if (tocLinks.length === 0 || anchors.length === 0) {
         return;
     }
@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function setActiveLink(id) {
         if (currentActiveId === id) return;
-        
+
         // Remove active class from all links
         tocLinks.forEach(link => link.classList.remove('active'));
-        
+
         // Add active class to current link
         const activeLink = linkMap.get(id);
         if (activeLink) {
@@ -56,13 +56,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver((entries) => {
         // Find the first heading that's intersecting (visible in the trigger zone)
         const visibleEntries = entries.filter(entry => entry.isIntersecting);
-        
+
         if (visibleEntries.length > 0) {
             // Sort by position and take the topmost one
             visibleEntries.sort((a, b) => {
                 return a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top;
             });
-            
+
             const topHeading = visibleEntries[0].target;
             const anchor = topHeading.querySelector('.anchor[id]');
             if (anchor) {
