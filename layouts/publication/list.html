@@ -1,26 +1,34 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<h1 class="text-primary-700 dark:text-primary-400">{{ .Title }}</h1>
 
 <ul class="publications-list">
     {{ range .Pages.ByDate.Reverse }}
-    <li class="publication-item">
+    <li
+        class="publication-item bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border-l-4 border-primary-500 hover:border-primary-600 dark:hover:border-primary-400 transition-all duration-200 hover:shadow-lg">
 
         {{/* Main citation line: authors, title, journal, year */}}
         <p class="citation">
             {{ with .Params.authors }}
-            <strong>{{ delimit . ", " }}</strong>.
+            <strong class="text-neutral-700 dark:text-neutral-300">{{ delimit . ", " }}</strong><span
+                class="text-neutral-500 dark:text-neutral-400">.</span>
             {{ end }}
-            <em><a href="{{ .Permalink }}">{{ .Title }}</a></em>.
+            <em><a href="{{ .Permalink }}"
+                    class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors duration-200">{{
+                    .Title }}</a></em><span class="text-neutral-500 dark:text-neutral-400">.</span>
             {{ with .Params.journal }}
-            {{ . }}.
+            <span class="text-secondary-600 dark:text-secondary-400 italic">{{ . }}</span><span
+                class="text-neutral-500 dark:text-neutral-400">.</span>
             {{ end }}
             {{ with .Date }}
-            {{ .Format "2006" }}.
+            <span class="text-neutral-600 dark:text-neutral-400 font-medium">{{ .Format "2006" }}</span><span
+                class="text-neutral-500 dark:text-neutral-400">.</span>
             {{ end }}
         </p>
 
         {{/* Links underneath citation using academicons */}}
-        {{ partial "links.html" . }}
+        <div class="mt-2">
+            {{ partial "links.html" . }}
+        </div>
 
     </li>
     {{ end }}
