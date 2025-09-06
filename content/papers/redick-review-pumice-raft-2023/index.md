@@ -26,7 +26,7 @@ tags:
 - Review
 - Submarine volcanism
 links:
-- url: https://msurjonline.mcgill.ca/article/view/187
+# - url: https://msurjonline.mcgill.ca/article/view/187
 - icon: "fa-file-pdf"
   url: 2023_redick_a-review-of-pumice-raft-formation-environments.pdf
 ---
