@@ -21,6 +21,12 @@
     weight     = 20
 
 [[main]]
+    identifier = "cv"
+    name       = "CV"
+    url        = "https://nredick.github.io/curriculum-vitae/cv.pdf"
+    weight     = 9
+
+[[main]]
     identifier = "qx9XY0i3mw"
     name       = "Papers"
     pageRef    = "papers"
