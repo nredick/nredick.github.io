@@ -94,7 +94,7 @@ verification                  = {}
     bio      = ""
     headline = "MSc student in Geophysics"
     image    = "avatar.jpg"
-    name     = "Nathalie R. Redick"
+    name     = "Nathalie Redick"
     pronouns = "she/her"
 
     [[author.links]]
