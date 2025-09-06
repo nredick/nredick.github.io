@@ -144,9 +144,9 @@
         {{ end }}
 
         {{ with ($otherMeta.Get "partials") }}
-        <div class="flex flex-row flex-wrap items-center text-neutral-400"
+        <div class="flex flex-row flex-wrap items-center text-neutral-500 dark:text-neutral-400"
             style="margin-bottom: 0.5rem; font-size: 0.9em;">
-            {{ delimit . "<span class=\"px-2 text-neutral-400\">&middot;</span>" | safeHTML }}
+            {{ delimit . "<span class=\"px-2 text-neutral-500 dark:text-neutral-400\">&middot;</span>" | safeHTML }}
 
             {{/* Output draft label */}}
             {{ if and (eq $scope "single") (and $.Draft $.Site.Params.article.showDraftLabel) }}

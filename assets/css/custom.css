@@ -26,11 +26,11 @@ main h1 {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 2.5rem;
-    color: var(--neutral-800);
+    color: rgb(var(--color-neutral-800));
 }
 
 .dark main h1 {
-    color: var(--neutral-100);
+    color: rgb(var(--color-neutral-100));
 }
 
 /* Publication title links */
@@ -48,45 +48,40 @@ main h1 {
     margin-bottom: 0;
     padding: 0;
     display: flex;
-    gap: 0.5em;
-    /* space between links */
+    gap: 0.25rem;
     flex-wrap: wrap;
-    /* optional if there are many icons */
     align-items: center;
     line-height: 1;
+    /* Remove custom color - let Tailwind classes handle it */
 }
 
 .pub-link {
     display: inline-flex;
-    /* make the link itself inline-flex */
     align-items: center;
     justify-content: center;
-    font-size: 0.9em;
-    color: inherit;
     text-decoration: none;
-    min-width: 1.2em;
-    /* reduced container size */
-    min-height: 1.2em;
-    padding: 0.1em;
-    /* reduced padding */
-    transition: transform 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
     gap: 0.3em;
     /* spacing between icon and text */
-}
-
-/* Make only the text smaller, not the icons */
-.pub-link {
-    font-size: 0.75em;
-}
-
-.pub-link i,
-.pub-link svg {
-    font-size: 1.2em;
 }
 
 .pub-link:hover {
     transform: scale(1.15);
 }
+
+/* Add hover scale and transition effects to author links on homepage */
+.text-2xl .flex a,
+.text-lg .flex a {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.text-2xl .flex a:hover,
+.text-lg .flex a:hover {
+    transform: scale(1.15);
+    /* Color changes are handled by Tailwind classes: hover:text-primary-700 dark:hover:text-primary-400 */
+}
+
+/* Remove the old styling rules that are no longer needed */
 
 /* Normalize spacing for both SVG icons and academicons */
 .pub-link svg,
@@ -129,11 +124,11 @@ main h1 {
     line-height: 1.3;
     margin-bottom: 1.5rem;
     font-weight: bold;
-    color: #2563eb;
+    color: rgb(var(--color-primary-600));
 }
 
 .dark .publication-single h1 {
-    color: #60a5fa;
+    color: rgb(var(--color-primary-400));
 }
 
 .publication-header {
@@ -142,32 +137,32 @@ main h1 {
 }
 
 .publication-header.has-content-below {
-    border-bottom: 2px solid #e5e7eb;
+    border-bottom: 2px solid rgb(var(--color-neutral-200));
 }
 
 .dark .publication-header.has-content-below {
-    border-bottom-color: #4b5563;
+    border-bottom-color: rgb(var(--color-neutral-600));
 }
 
 .publication-authors {
     font-size: 1.1em;
     margin-bottom: 0.5rem;
-    color: #374151;
+    color: rgb(var(--color-neutral-700));
     font-weight: 500;
 }
 
 .dark .publication-authors {
-    color: #d1d5db;
+    color: rgb(var(--color-neutral-300));
 }
 
 .publication-details {
     font-size: 0.95em;
-    color: var(--neutral-600);
+    color: rgb(var(--color-neutral-600));
     margin-bottom: 1rem;
 }
 
 .dark .publication-details {
-    color: var(--neutral-400);
+    color: rgb(var(--color-neutral-400));
 }
 
 .publication-details .journal {
@@ -181,7 +176,11 @@ main h1 {
 .publication-abstract h2 {
     font-size: 1.3em;
     margin-bottom: 1rem;
-    color: #2563eb;
+    color: rgb(var(--color-primary-600));
+}
+
+.dark .publication-abstract h2 {
+    color: rgb(var(--color-primary-400));
 }
 
 .publication-abstract p {
@@ -189,15 +188,13 @@ main h1 {
     text-align: justify;
 }
 
-/* Bigger link icons on single publication pages */
+/* Bigger link icons on single publication pages - now matches author links */
 .publication-single .pub-link {
-    font-size: 0.9em;
+    font-size: 1.5rem;
+    /* keep same size as elsewhere */
 }
 
-.publication-single .pub-link i,
-.publication-single .pub-link svg {
-    font-size: 1.1em;
-}
+/* Remove old override rules */
 
 /* Publication single page meta spacing */
 .publication-single .flex {

@@ -1,4 +1,4 @@
-colorScheme = "blowfish"
+colorScheme = "avocado"
 defaultAppearance = "light"
 autoSwitchAppearance = true
 enableA11y = false
@@ -35,7 +35,7 @@ layout = "academic"
 showRecent = false
 showRecentItems = 5
 showMoreLink = false
-showMoreLinkDest = "/posts/"
+showMoreLinkDest = "/notes/"
 cardView = false
 cardViewScreenWidth = false
 layoutBackgroundBlur = false

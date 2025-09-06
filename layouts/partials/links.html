@@ -13,12 +13,13 @@ Each link object can have:
 - icon: optional icon class (ai-*, fa-*, or blowfish icon name)
 */}}
 
-<p class="pub-links">
+<p class="pub-links text-neutral-400 dark:text-neutral-500 text-2xl">
     {{- with .Params.links -}}
     {{- range . -}}
     {{- if .icon -}}
     {{- if hasPrefix .icon "ai" -}}
-    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank"><i class="ai {{ .icon }}"></i>{{ with
+    <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
+        target="_blank"><i class="ai {{ .icon }}"></i>{{ with
         .name }} {{ . }}{{ end }}</a>
     {{- else if hasPrefix .icon "fa" -}}
     {{- $iconClass := .icon -}}
@@ -26,19 +27,23 @@ Each link object can have:
     .icon "fa-light") (hasPrefix .icon "fa-thin") (hasPrefix .icon "fa-duotone") (hasPrefix .icon "fa-brands"))) -}}
     {{- $iconClass = printf "fa-solid %s" .icon -}}
     {{- end -}}
-    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank"><i class="{{ $iconClass }}"></i>{{ with
+    <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
+        target="_blank"><i class="{{ $iconClass }}"></i>{{ with
         .name }} {{ . }}{{ end }}</a>
     {{- else -}}
-    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank">{{ partial "icon.html" .icon }}{{ with
+    <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
+        target="_blank">{{ partial "icon.html" .icon }}{{ with
         .name }} {{ . }}{{ end }}</a>
     {{- end -}}
     {{- else -}}
-    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank">{{ partial "icon.html" "link" }}{{ with
+    <a href="{{ .url }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400" title="{{ .name }}"
+        target="_blank">{{ partial "icon.html" "link" }}{{ with
         .name }} {{ . }}{{ end }}</a>
     {{- end -}}
     {{- end -}}
     {{- end -}}
     {{- with .Params.doi -}}
-    <a href="https://doi.org/{{ . }}" class="pub-link" title="DOI" target="_blank"><i class="ai ai-doi"></i></a>
+    <a href="https://doi.org/{{ . }}" class="pub-link px-1 hover:text-primary-700 dark:hover:text-primary-400"
+        title="DOI" target="_blank"><i class="ai ai-doi"></i></a>
     {{- end -}}
 </p>
