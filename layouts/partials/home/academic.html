@@ -1,4 +1,34 @@
-<div class="relative pt-16 pb-32">
+<script>
+    // Set homepage to always use dark mode (override user/system preference)
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+</script>
+
+<div class="relative pt-16 pb-32 dark">
+    <!-- Background Image Implementation from background.html -->
+    <div class="fixed inset-x-0 top-0 -z-10">
+        {{ $homepageImage := "" }}
+        {{ with .Site.Params.defaultBackgroundImage }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $homepageImage = resources.GetRemote . }}
+        {{ else }}
+        {{ $homepageImage = resources.Get . }}
+        {{ end }}
+        {{ end }}
+        {{ with .Site.Params.homepage.homepageImage }}
+        {{ if or (strings.HasPrefix . "http:") (strings.HasPrefix . "https:") }}
+        {{ $homepageImage = resources.GetRemote . }}
+        {{ else }}
+        {{ $homepageImage = resources.Get . }}
+        {{ end }}
+        {{ end }}
+        {{ if $homepageImage }}
+        <img id="homepage-background-image" class="nozoom mt-0 mr-0 mb-0 ml-0 h-[1000px] w-full object-cover"
+            src="{{ $homepageImage.RelPermalink }}" role="presentation">
+        {{/* <div class="absolute inset-0 h-[1000px] bg-white/10 dark:bg-black/20"></div> */}}
+        {{ end }}
+    </div>
+
     <div class="relative">
         <div class="lg:mx-auto lg:grid lg:max-w-7xl lg:gap-12 lg:px-8" style="grid-template-columns: 2fr 3fr;">
             <!-- Left Column - Profile -->
@@ -25,8 +55,6 @@
                         {{ .Site.Params.Author.name | default .Site.Title }}
                     </h1>
 
-
-
                     <!-- Author Headline -->
                     {{ with .Site.Params.Author.headline }}
                     <h2 class="mt-0 mb-2 text-lg text-neutral-500 dark:text-neutral-300">
@@ -36,7 +64,7 @@
 
                     <!-- Author Pronouns -->
                     {{ with .Site.Params.Author.pronouns }}
-                    <h2 class="mt-0 mb-1 text-lg text-neutral-400 dark:text-neutral-500">
+                    <h2 class="mt-0 mb-1 text-lg text-neutral-400 dark:text-neutral-400">
                         ({{ . | markdownify }})
                     </h2>
                     {{ end }}
