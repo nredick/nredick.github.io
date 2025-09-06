@@ -4,8 +4,8 @@
 title: "Setting up VSCode and Python for MacOS"
 summary: "Guide to setting up VSCode and Python on MacOS with or without Homebrew"
 authors: [admin]
-tags: [tutorial, python, vscode, macos, hidden]
-categories: [Tutorials]
+tags: [tutorial, python, vscode, macos]
+# categories: [Tutorials]
 date: 2024-11-25
 
 toc: true

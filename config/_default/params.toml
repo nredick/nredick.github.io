@@ -1,13 +1,13 @@
 advertisement                 = {}
-autoSwitchAppearance          = true
+autoSwitchAppearance          = false
 buymeacoffee                  = {}
-colorScheme                   = "avocado"
-defaultAppearance             = "light"
+colorScheme                   = "blowfish"
+defaultAppearance             = "dark"
 disableImageOptimization      = false
 disableImageOptimizationMD    = false
 disableTextInHeader           = false
 enableA11y                    = false
-enableCodeCopy                = false
+enableCodeCopy                = true
 enableSearch                  = true
 fathomAnalytics               = {}
 fingerprintAlgorithm          = "sha512"
@@ -27,7 +27,7 @@ verification                  = {}
     layout = "fixed-fill-blur"
 
 [footer]
-    showAppearanceSwitcher = true
+    showAppearanceSwitcher = false
     showCopyright          = true
     showMenu               = true
     showScrollToTop        = true
@@ -51,9 +51,9 @@ verification                  = {}
     layoutBackgroundBlur        = true
     layoutBackgroundHeaderSpace = true
     seriesOpened                = false
-    showAuthor                  = true
+    showAuthor                  = false
     showAuthorsBadges           = false
-    showBreadcrumbs             = false
+    showBreadcrumbs             = true
     showCategoryOnly            = false
     showDate                    = true
     showDateOnlyInArticle       = false
@@ -66,7 +66,7 @@ verification                  = {}
     showPagination              = true
     showReadingTime             = true
     showTableOfContents         = true
-    showTaxonomies              = false
+    showTaxonomies              = true
     showViews                   = false
     showWordCount               = true
     showZenMode                 = false
@@ -79,16 +79,31 @@ verification                  = {}
     layoutBackgroundBlur        = true
     layoutBackgroundHeaderSpace = true
     orderByWeight               = false
-    showBreadcrumbs             = false
+    showBreadcrumbs             = true
     showCards                   = false
     showHero                    = false
     showLikes                   = false
     showSummary                 = false
-    showTableOfContents         = false
+    showTableOfContents         = true
     showViews                   = false
 
 [sitemap]
     excludedKinds = ["taxonomy", "term"]
+
+[author]
+    bio      = ""
+    headline = "MSc student in Geophysics"
+    image    = "avatar.jpg"
+    name     = "Nathalie R. Redick"
+    pronouns = "she/her"
+
+    [[author.links]]
+        bluesky        = "https://bsky.app/profile/nredick.bsky.social"
+        email          = "mailto:nrredick@ucdavis.edu"
+        github         = "https://github.com/nredick"
+        google-scholar = "https://scholar.google.com/citations?user=lvM_6HMAAAAJ&hl=en"
+        linkedin       = "https://www.linkedin.com/in/nredick"
+        orcid          = "https://orcid.org/0009-0005-5028-5299"
 
 [taxonomy]
     cardView            = false

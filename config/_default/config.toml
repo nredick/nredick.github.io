@@ -1,0 +1,8 @@
+# https://scripter.co/hugo-modules-importing-a-theme/
+[module]
+    [[module.imports]]
+        path = "github.com/mfg92/hugo-shortcode-gallery"
+    [[module.imports]]
+        path = "github.com/nunocoracao/blowfish/v2"
+
+timeout = 60000 # This is required for larger galleries to be build (60 sec)

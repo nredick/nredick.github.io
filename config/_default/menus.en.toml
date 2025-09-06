@@ -38,5 +38,11 @@
     pageRef    = "talks"
     weight     = 11
 
+[[main]]
+    identifier = "photos"
+    name       = "Photos"
+    pageRef    = "gallery"
+    weight     = 13
+
 [[footer]]
     none = "none"

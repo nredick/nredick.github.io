@@ -1,19 +1,20 @@
-/* Publications page title styling *.pub-link {
+/* Publications page title styling */
+.pub-link {
     display: inline-flex;
     /* make the link itself inline-flex */
-align-items: center;
-justify-content: center;
-font-size: 0.75em;
-color: inherit;
-text-decoration: none;
-min-width: 1.2em;
-/* reduced container size */
-min-height: 1.2em;
-padding: 0.1em;
-/* reduced padding */
-transition: transform 0.2s ease;
-gap: 0.3em;
-/* spacing between icon and text */
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75em;
+    color: inherit;
+    text-decoration: none;
+    min-width: 1.2em;
+    /* reduced container size */
+    min-height: 1.2em;
+    padding: 0.1em;
+    /* reduced padding */
+    transition: transform 0.2s ease;
+    gap: 0.3em;
+    /* spacing between icon and text */
 }
 
 .pub-link:hover {
@@ -239,4 +240,27 @@ main h1 {
 
 .dark #TableOfContents a:hover {
     background-color: rgb(var(--color-neutral-800));
+}
+
+/* Full-width gallery styling */
+.hugo-shortcode-gallery {
+    width: 100vw !important;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    max-width: none !important;
+}
+
+/* Alternative approach - make the entire article content full-width when it contains a gallery */
+article:has(.hugo-shortcode-gallery) .prose,
+article:has(.hugo-shortcode-gallery) .max-w-prose {
+    max-width: none !important;
+    width: 100% !important;
+}
+
+/* Ensure gallery container breaks out of content constraints */
+.hugo-shortcode-gallery .justified-gallery {
+    width: 100% !important;
 }
