@@ -2,16 +2,35 @@
 none = "none"
 
 [[main]]
+name = "Posts"
+identifier = "posts"
+weight = 12
+
+[[main]]
+name = "Docs"
+pageRef = "docs"
+identifier = "docs"
+parent = "posts"
+weight = 12
+
+[[main]]
+name = "Notes"
+pageRef = "notes"
+identifier = "notes"
+parent = "posts"
+weight = 20
+
+[[main]]
 name = "Papers"
 pageRef = "papers"
 identifier = "qx9XY0i3mw"
-weight = 9_999
+weight = 10
 
 [[main]]
 name = "Talks"
 pageRef = "talks"
 identifier = "Xt65JPJG1J"
-weight = 9_999
+weight = 11
 
 [[footer]]
 none = "none"
