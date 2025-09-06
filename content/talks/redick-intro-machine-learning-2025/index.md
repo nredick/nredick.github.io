@@ -11,12 +11,12 @@ tags:
 - Machine learning
 - Tutorial
 links:
-- name: URL
-  url: https://github.com/nredick/intro-to-ml-GVP
-- type: slides
-  url: https://nredick.github.io/intro-to-ml-GVP/
-- type: pdf
+- url: https://github.com/nredick/intro-to-ml-GVP
+- icon: fa-file-pdf
   url: slides.pdf
-- type: code
-  url: ../post/intro-to-ml
+- name: Interactive slides
+  icon: fa-book-open
+  url: https://nredick.github.io/intro-to-ml-GVP/
+# - icon: "fa-newspaper"
+#   url: ../post/intro-to-ml
 ---

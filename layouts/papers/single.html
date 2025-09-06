@@ -1,0 +1,43 @@
+{{ define "main" }}
+<article class="publication-single">
+    {{/* Publication header with title */}}
+    <header class="publication-header">
+        <h1>{{ .Title }}</h1>
+
+        {{/* Authors */}}
+        {{ with .Params.authors }}
+        <p class="publication-authors">
+            <strong>{{ delimit . ", " }}</strong>
+        </p>
+        {{ end }}
+
+        {{/* Publication details: journal, date */}}
+        <p class="publication-details">
+            {{ with .Params.journal }}
+            <span class="journal">{{ . }}</span>
+            {{ end }}
+            {{ with .Date }}
+            <span class="date">{{ .Format "2006" }}</span>
+            {{ end }}
+        </p>
+
+        {{/* Publication links */}}
+        {{ partial "links.html" . }}
+    </header>
+
+    {{/* Abstract section */}}
+    {{ with .Params.abstract }}
+    <section class="publication-abstract">
+        <h2>Abstract</h2>
+        <p>{{ . }}</p>
+    </section>
+    {{ end }}
+
+    {{/* Main content */}}
+    {{ if .Content }}
+    <section class="publication-content">
+        {{ .Content }}
+    </section>
+    {{ end }}
+</article>
+{{ end }}

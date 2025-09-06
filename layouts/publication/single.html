@@ -1,0 +1,215 @@
+{{ define "main" }}
+<article class="publication-single">
+    {{/* Publication header with title */}}
+    <header class="publication-header{{ if or .Params.abstract .Content }} has-content-below{{ end }}">
+        <h1>{{ .Title }}</h1>
+
+        {{/* Authors */}}
+        {{ with .Params.authors }}
+        <p class="publication-authors">
+            <strong>{{ delimit . ", " }}</strong>
+        </p>
+        {{ end }}
+
+        {{/* Publication details: journal, date */}}
+        <p class="publication-details">
+            {{ with .Params.journal }}
+            <span class="journal">{{ . }}
+                {{ end }}
+                {{/* {{ with .Date }}
+                <span class="date">{{ .Format "2006" }}</span>
+                {{ end }} */}}
+        </p>
+
+        {{/* Meta information using Blowfish theme logic */}}
+        {{/* Determine the correct context and scope */}}
+        {{ $context := . }}
+        {{ $scope := "single" }}
+
+        {{ with $context }}
+        {{ $meta := newScratch }}
+
+        {{/* Gather partials for this context */}}
+        {{ $shouldShowDate := false }}
+        {{ if and (eq $scope "single") (.Params.showDateOnlyInArticle | default
+        (.Site.Params.article.showDateOnlyInArticle | default false)) }}
+        {{ $shouldShowDate = true }}
+        {{ end }}
+
+        {{/* showDate has higher priority than showDateOnlyInArticle */}}
+        {{ if .Params.showDate | default (.Site.Params.article.showDate | default true) }}
+        {{ $shouldShowDate = true }}
+        {{ else }}
+        {{ $shouldShowDate = false }}
+        {{ end }}
+
+        {{ if $shouldShowDate }}
+        {{ $meta.Add "partials" (slice (partial "meta/date.html" .Date)) }}
+        {{ end }}
+
+        {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne
+        (partial
+        "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1)
+        }}
+        {{ $meta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
+        {{ end }}
+
+        {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount
+        0) }}
+        {{ $meta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+        {{ end }}
+
+        {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne
+        .ReadingTime 0) }}
+        {{ $meta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+        {{ end }}
+
+        {{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default
+        false)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/views.html" .)) }}
+        {{ end }}
+
+        {{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default
+        false)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/likes.html" .)) }}
+        {{ end }}
+
+        {{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default
+        (.Site.Params.article.showLikes | default false)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
+        {{ end }}
+
+        {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+        {{ end }}
+
+        {{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default
+        false)) }}
+        {{ $meta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
+        {{ end }}
+
+        <div class="flex flex-row flex-wrap items-center" style="margin-bottom: 0.75rem;">
+            {{/* Date only */}}
+            {{ if and (.Params.showDate | default (.Site.Params.article.showDate | default true)) (.Date) }}
+            {{ partial "meta/date.html" .Date }}
+            {{ end }}
+
+            {{/* Publication links on same line as date */}}
+            <span class="px-2">&middot;</span>
+            <span>{{ partial "links.html" . }}</span>
+        </div>
+
+        {{/* Other meta info on separate line with reduced color */}}
+        {{ $otherMeta := newScratch }}
+
+        {{ if and (.Params.showDateUpdated | default (.Site.Params.article.showDateUpdated | default false)) (ne
+        (partial
+        "functions/date.html" .Date) (partial "functions/date.html" .Lastmod)) (gt (.Lastmod | time.Format "2006") 1)
+        }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/date-updated.html" .Lastmod)) }}
+        {{ end }}
+
+        {{ if and (.Params.showWordCount | default (.Site.Params.article.showWordCount | default false)) (ne .WordCount
+        0) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/word-count.html" .)) }}
+        {{ end }}
+
+        {{ if and (.Params.showReadingTime | default (.Site.Params.article.showReadingTime | default true)) (ne
+        .ReadingTime 0) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/reading-time.html" .)) }}
+        {{ end }}
+
+        {{ if and (not .Params.externalURL) (.Params.showViews | default (.Site.Params.article.showViews | default
+        false)) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/views.html" .)) }}
+        {{ end }}
+
+        {{ if and (not .Params.externalURL) (.Params.showLikes | default (.Site.Params.article.showLikes | default
+        false)) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/likes.html" .)) }}
+        {{ end }}
+
+        {{ if and (eq $scope "single") (not .Params.externalURL) (.Params.showLikes | default
+        (.Site.Params.article.showLikes | default false)) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/likes_button.html" .)) }}
+        {{ end }}
+
+        {{ if and (eq $scope "single") (.Params.showEdit | default (.Site.Params.article.showEdit | default false)) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/edit.html" .)) }}
+        {{ end }}
+
+        {{ if and (eq $scope "single") (.Params.showZenMode | default (.Site.Params.article.showZenMode | default
+        false)) }}
+        {{ $otherMeta.Add "partials" (slice (partial "meta/zen-mode.html" .)) }}
+        {{ end }}
+
+        {{ with ($otherMeta.Get "partials") }}
+        <div class="flex flex-row flex-wrap items-center text-neutral-400"
+            style="margin-bottom: 0.5rem; font-size: 0.9em;">
+            {{ delimit . "<span class=\"px-2 text-neutral-400\">&middot;</span>" | safeHTML }}
+
+            {{/* Output draft label */}}
+            {{ if and (eq $scope "single") (and $.Draft $.Site.Params.article.showDraftLabel) }}
+            <span class="pl-2">{{ partial "badge.html" (i18n "article.draft" | emojify) }}</span>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ if .Params.showAuthorsBadges | default (.Site.Params.article.showAuthorsBadges | default false) }}
+        <div class="flex flex-row flex-wrap items-center">
+            {{ range $taxonomy, $terms := .Site.Taxonomies }}
+            {{ if (eq $taxonomy "authors") }}
+            {{ if (gt (len ($context.GetTerms $taxonomy)) 0) }}
+            {{ range $i, $a := $context.GetTerms $taxonomy }}
+            {{ if not (eq $i 0) }},&nbsp;{{ end }}
+            <a href="{{ $a.RelPermalink }}" class="relative">{{ $a.LinkTitle }}</a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ end }}
+
+        {{/* Move taxonomies below links */}}
+        {{ if .Params.showTaxonomies | default (.Site.Params.article.showTaxonomies | default false) }}
+        <div class="flex flex-row flex-wrap items-center">
+            {{ range $taxonomy, $terms := .Site.Taxonomies }}
+            {{ if and (not (eq $taxonomy "authors")) (not (eq $taxonomy "series")) }}
+            {{ if (gt (len ($.GetTerms $taxonomy)) 0) }}
+            {{ range $.GetTerms $taxonomy }}
+            <a class="relative mt-[0.25rem] mr-2" href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</a>
+            {{ end }}
+            {{ end }}
+            {{ end }}
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Output only category below links */}}
+        {{ if .Params.showCategoryOnly | default (.Site.Params.article.showCategoryOnly | default false) }}
+        <div class="flex flex-row flex-wrap items-center">
+            {{ range ($.GetTerms "categories") }}
+            <a class="relative mt-[0.25rem] mr-2" href="{{ .RelPermalink }}">{{ partial "badge.html" .LinkTitle }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </header>
+
+    {{/* Abstract section */}}
+    {{ with .Params.abstract }}
+    <section class="publication-abstract">
+        <h2>Abstract</h2>
+        <p>{{ . }}</p>
+    </section>
+    {{ end }}
+
+    {{/* Main content */}}
+    {{ if .Content }}
+    <section class="publication-content">
+        {{ .Content }}
+    </section>
+    {{ end }}
+</article>
+{{ end }}

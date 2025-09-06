@@ -1,0 +1,44 @@
+{{/*
+Publication Links Partial
+
+Usage: {{ partial "publication-links.html" . }}
+
+Expects the page context to have:
+- .Params.links (array of link objects with .url, .name, and optional .icon)
+- .Params.doi (optional DOI string)
+
+Each link object can have:
+- url: the link URL
+- name: display name/title for the link
+- icon: optional icon class (ai-*, fa-*, or blowfish icon name)
+*/}}
+
+<p class="pub-links">
+    {{- with .Params.links -}}
+    {{- range . -}}
+    {{- if .icon -}}
+    {{- if hasPrefix .icon "ai" -}}
+    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank"><i class="ai {{ .icon }}"></i>{{ with
+        .name }} {{ . }}{{ end }}</a>
+    {{- else if hasPrefix .icon "fa" -}}
+    {{- $iconClass := .icon -}}
+    {{- if and (hasPrefix .icon "fa-") (not (or (hasPrefix .icon "fa-solid") (hasPrefix .icon "fa-regular") (hasPrefix
+    .icon "fa-light") (hasPrefix .icon "fa-thin") (hasPrefix .icon "fa-duotone") (hasPrefix .icon "fa-brands"))) -}}
+    {{- $iconClass = printf "fa-solid %s" .icon -}}
+    {{- end -}}
+    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank"><i class="{{ $iconClass }}"></i>{{ with
+        .name }} {{ . }}{{ end }}</a>
+    {{- else -}}
+    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank">{{ partial "icon.html" .icon }}{{ with
+        .name }} {{ . }}{{ end }}</a>
+    {{- end -}}
+    {{- else -}}
+    <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank">{{ partial "icon.html" "link" }}{{ with
+        .name }} {{ . }}{{ end }}</a>
+    {{- end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- with .Params.doi -}}
+    <a href="https://doi.org/{{ . }}" class="pub-link" title="DOI" target="_blank"><i class="ai ai-doi"></i></a>
+    {{- end -}}
+</p>

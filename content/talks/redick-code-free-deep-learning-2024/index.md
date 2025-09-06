@@ -38,9 +38,8 @@ tags:
 - Machine learning
 - Open science
 links:
-- name: URL
-  url: https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1366363
+- url: https://agu.confex.com/agu/fm23/meetingapp.cgi/Paper/1366363
 - name: iPoster
-  type: slides
+  icon: "fa-solid fa-image"
   url: https://agu23.ipostersessions.com/Default.aspx?s=50-20-C0-E2-80-0B-ED-73-CC-3E-1D-A0-DA-35-98-9F
 ---

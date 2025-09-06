@@ -1,5 +1,6 @@
 ---
 title: A Review of Pumice Raft Formation Environments, Saturation, and Dispersal Mechanisms
+journal: McGill Science Undergraduate Research Journal
 authors:
 - Nathalie R. Redick
 date: '2023-03-20'
@@ -25,11 +26,9 @@ tags:
 - Review
 - Submarine volcanism
 links:
-- name: URL
-  url: https://msurjonline.mcgill.ca/article/view/187
-- name: pdf
-  type: pdf
+- url: https://msurjonline.mcgill.ca/article/view/187
+- icon: "fa-file-pdf"
   url: 2023_redick_a-review-of-pumice-raft-formation-environments.pdf
 ---
 
-![alt text](9955D753-0DB2-4F2A-82EB-A7D660FCFAAD_1_105_c.jpeg)
+<!-- ![alt text](9955D753-0DB2-4F2A-82EB-A7D660FCFAAD_1_105_c.jpeg) -->

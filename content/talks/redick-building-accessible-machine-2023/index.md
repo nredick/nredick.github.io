@@ -21,9 +21,7 @@ tags:
 - Machine learning
 - Open science
 links:
-- name: URL
-  url: https://escholarship.mcgill.ca/concern/presentations/2n49t738j
-- name: pdf
-  type: pdf
+- url: https://escholarship.mcgill.ca/concern/presentations/2n49t738j
+- icon: fa-file-pdf
   url: slides.pdf
 ---

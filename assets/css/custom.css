@@ -1,9 +1,31 @@
+/* Publications page title styling *.pub-link {
+    display: inline-flex;
+    /* make the link itself inline-flex */
+align-items: center;
+justify-content: center;
+font-size: 0.75em;
+color: inherit;
+text-decoration: none;
+min-width: 1.2em;
+/* reduced container size */
+min-height: 1.2em;
+padding: 0.1em;
+/* reduced padding */
+transition: transform 0.2s ease;
+gap: 0.3em;
+/* spacing between icon and text */
+}
+
+.pub-link:hover {
+    transform: scale(1.15);
+}
+
 /* Publications page title styling */
 .publications-list~h1,
 main h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     color: var(--neutral-800);
 }
 
@@ -11,13 +33,23 @@ main h1 {
     color: var(--neutral-100);
 }
 
+/* Publication title links */
+.citation em a {
+    text-decoration: underline;
+    color: inherit;
+}
+
+.citation em a:hover {
+    text-decoration-thickness: 2px;
+}
+
 .pub-links {
     margin-top: 0.2em;
     margin-bottom: 0;
     padding: 0;
     display: flex;
-    gap: 0.25em;
-    /* reduced space between icons */
+    gap: 0.5em;
+    /* space between links */
     flex-wrap: wrap;
     /* optional if there are many icons */
     align-items: center;
@@ -29,7 +61,7 @@ main h1 {
     /* make the link itself inline-flex */
     align-items: center;
     justify-content: center;
-    font-size: 1.1em;
+    font-size: 0.9em;
     color: inherit;
     text-decoration: none;
     min-width: 1.2em;
@@ -38,6 +70,18 @@ main h1 {
     padding: 0.1em;
     /* reduced padding */
     transition: transform 0.2s ease;
+    gap: 0.3em;
+    /* spacing between icon and text */
+}
+
+/* Make only the text smaller, not the icons */
+.pub-link {
+    font-size: 0.75em;
+}
+
+.pub-link i,
+.pub-link svg {
+    font-size: 1.2em;
 }
 
 .pub-link:hover {
@@ -56,4 +100,111 @@ main h1 {
 .pub-link .ai {
     font-size: 1em;
     line-height: 1;
+}
+
+/* Publication list spacing */
+.publications-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.publication-item {
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.publication-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Individual publication page styling */
+.publication-single {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.publication-single h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.dark .publication-single h1 {
+    color: #60a5fa;
+}
+
+.publication-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.publication-header.has-content-below {
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.dark .publication-header.has-content-below {
+    border-bottom-color: #4b5563;
+}
+
+.publication-authors {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+    color: #374151;
+    font-weight: 500;
+}
+
+.dark .publication-authors {
+    color: #d1d5db;
+}
+
+.publication-details {
+    font-size: 0.95em;
+    color: var(--neutral-600);
+    margin-bottom: 1rem;
+}
+
+.dark .publication-details {
+    color: var(--neutral-400);
+}
+
+.publication-details .journal {
+    font-style: italic;
+}
+
+.publication-abstract {
+    margin-bottom: 2rem;
+}
+
+.publication-abstract h2 {
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+    color: #2563eb;
+}
+
+.publication-abstract p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Bigger link icons on single publication pages */
+.publication-single .pub-link {
+    font-size: 0.9em;
+}
+
+.publication-single .pub-link i,
+.publication-single .pub-link svg {
+    font-size: 1.1em;
+}
+
+/* Publication single page meta spacing */
+.publication-single .flex {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.publication-single .flex:empty {
+    display: none;
 }
