@@ -5,4 +5,4 @@
 
 ## About <a name = "about"></a>
 
-A personal website to showcase my CV, projects, research, etc. Built using [Hugo](https://gohugo.io) with the [blowfish](https://blowfish.site/) theme. Deployed using Github Pages via Github Actions.
+A personal website to showcase my CV, projects, research, etc. Built using [Hugo](https://gohugo.io) with the [blowfish](https://blowfish.page/) theme. Deployed using Github Pages via Github Actions.
