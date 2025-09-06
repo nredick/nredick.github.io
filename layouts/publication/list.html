@@ -1,0 +1,49 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<ul class="publications-list">
+    {{ range .Pages.ByDate.Reverse }}
+    <li class="publication-item">
+
+        {{/* Main citation line: authors, title, journal, year */}}
+        <p class="citation">
+            {{ with .Params.authors }}
+            <strong>{{ delimit . ", " }}</strong>.
+            {{ end }}
+            <em>{{ .Title }}</em>.
+            {{ with .Params.journal }}
+            {{ . }}.
+            {{ end }}
+            {{ with .Date }}
+            {{ .Format "2006" }}.
+            {{ end }}
+        </p>
+
+        {{/* Links underneath citation using academicons */}}
+        <p class="pub-links">
+            {{- with .Params.links -}}
+            {{- range . -}}
+            {{- if .icon -}}
+            {{- if hasPrefix .icon "ai" -}}
+            <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank"><i class="ai {{ .icon }}"></i></a>
+            {{- else if hasPrefix .icon "fa" -}}
+            <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank"><i class="{{ .icon }}"></i></a>
+            {{- else -}}
+            <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank">{{ partial "icon.html" .icon
+                }}</a>
+            {{- end -}}
+            {{- else -}}
+            <a href="{{ .url }}" class="pub-link" title="{{ .name }}" target="_blank">{{ partial "icon.html" "link"
+                }}</a>
+            {{- end -}}
+            {{- end -}}
+            {{- end -}}
+            {{- with .Params.doi -}}
+            <a href="https://doi.org/{{ . }}" class="pub-link" title="DOI" target="_blank"><i class="ai ai-doi"></i></a>
+            {{- end -}}
+        </p>
+
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

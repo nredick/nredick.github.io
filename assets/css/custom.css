@@ -1,0 +1,59 @@
+/* Publications page title styling */
+.publications-list~h1,
+main h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--neutral-800);
+}
+
+.dark main h1 {
+    color: var(--neutral-100);
+}
+
+.pub-links {
+    margin-top: 0.2em;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.25em;
+    /* reduced space between icons */
+    flex-wrap: wrap;
+    /* optional if there are many icons */
+    align-items: center;
+    line-height: 1;
+}
+
+.pub-link {
+    display: inline-flex;
+    /* make the link itself inline-flex */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+    color: inherit;
+    text-decoration: none;
+    min-width: 1.2em;
+    /* reduced container size */
+    min-height: 1.2em;
+    padding: 0.1em;
+    /* reduced padding */
+    transition: transform 0.2s ease;
+}
+
+.pub-link:hover {
+    transform: scale(1.15);
+}
+
+/* Normalize spacing for both SVG icons and academicons */
+.pub-link svg,
+.pub-link .ai {
+    display: block;
+    width: 1em;
+    height: 1em;
+}
+
+/* Academicons styling for publication links */
+.pub-link .ai {
+    font-size: 1em;
+    line-height: 1;
+}
