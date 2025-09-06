@@ -1,10 +1,10 @@
 {{ define "main" }}
 <h1 class="text-primary-700 dark:text-primary-400">{{ .Title }}</h1>
 
-<ul class="publications-list">
+<ul class="publications-list space-y-1">
     {{ range .Pages.ByDate.Reverse }}
     <li
-        class="publication-item bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border-l-4 border-primary-500 hover:border-primary-600 dark:hover:border-primary-400 transition-all duration-200 hover:shadow-lg">
+        class="publication-item bg-neutral-50 dark:bg-neutral-800 rounded-lg p-4 border border-neutral-200 dark:border-neutral-700 border-l-4 border-l-primary-500 hover:border-l-primary-600 dark:hover:border-l-primary-400 hover:bg-neutral-100 dark:hover:bg-neutral-750 transition-all duration-200 hover:shadow-md shadow-sm">
 
         {{/* Main citation line: authors, title, journal, year */}}
         <p class="citation">
