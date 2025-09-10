@@ -12,4 +12,4 @@ education:
 
 I am a graduate student at the University of California, Davis in the geodynamics lab. Currently, I am working on improving slab shape models of the Cascadia subduction zone by linking predictions of the mantle flow around the slab from geodynamic models to seismic observations.
 
-I am interested in marine and volcano geophysics, seismology (especially seismic imaging and tomography), and *any* opportunity to be in the [field→]({{< relref "./gallery.md" >}}).
+I am interested in marine and volcano geophysics, seismology (especially seismic imaging and tomography), machine/deep learning, and *any* opportunity to be in the [field→]({{< relref "./gallery.md" >}}).
