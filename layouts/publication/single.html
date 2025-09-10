@@ -93,10 +93,11 @@
             {{ if and (.Params.showDate | default (.Site.Params.article.showDate | default true)) (.Date) }}
             {{ partial "meta/date.html" .Date }}
             {{ end }}
-
-            {{/* Publication links on same line as date */}}
+            {{/* Only show dot if there are links or DOI */}}
+            {{ if or (gt (len (default (slice) .Params.links)) 0) (.Params.doi) }}
             <span class="px-2">&middot;</span>
             <span>{{ partial "links.html" . }}</span>
+            {{ end }}
         </div>
 
         {{/* Other meta info on separate line with reduced color */}}
@@ -207,7 +208,7 @@
 
     {{/* Main content */}}
     {{ if .Content }}
-    <section class="publication-content">
+    <section class="publication-content prose dark:prose-invert">
         {{ .Content }}
     </section>
     {{ end }}
