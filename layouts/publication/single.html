@@ -11,14 +11,23 @@
         </p>
         {{ end }}
 
-        {{/* Publication details: journal, date */}}
+        {{/* Publication details: Nature journal format */}}
         <p class="publication-details">
             {{ with .Params.journal }}
-            <span class="journal">{{ . }}
-                {{ end }}
-                {{/* {{ with .Date }}
-                <span class="date">{{ .Format "2006" }}</span>
-                {{ end }} */}}
+            <span class="journal"><em>{{ . }}</em>
+                {{- if $.Params.volume }} <strong>{{ $.Params.volume }}</strong>{{ end -}}
+                {{- if $.Params.pages }}, {{ $.Params.pages }}{{ end -}}
+            </span>
+            {{ end }}
+            {{- if and .Params.event (not .Params.journal) }}
+            <span class="event"><em>{{ .Params.event }}</em></span>
+            {{- end -}}
+            {{- if and .Params.venue (not .Params.journal) }}
+            {{- if .Params.event }}, {{ end }}<span class="venue">{{ .Params.venue }}</span>
+            {{- end -}}
+            {{- if .Params.talk_type }}
+            <span class="talk-type"> ({{ .Params.talk_type }})</span>
+            {{- end }}
         </p>
 
         {{/* Meta information using Blowfish theme logic */}}

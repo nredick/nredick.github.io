@@ -2,13 +2,19 @@
 
 cd ..
 
+# Use enhanced Python import script for better Nature-style formatting
 if [ "$1" == "--overwrite" ]; then
-    echo "Overwriting existing entries"
-    academic import papers.bib content/papers/ --compact --verbose --normalize --overwrite
-    academic import talks.bib content/talks/ --compact --verbose --normalize --overwrite
+    echo "Completely overwriting existing entries with enhanced import"
+    python3 scripts/enhanced_import.py papers.bib content/papers/ --overwrite
+    python3 scripts/enhanced_import.py talks.bib content/talks/ --overwrite
+elif [ "$1" == "--dry-run" ]; then
+    echo "DRY RUN: Showing what would be imported without making changes"
+    python3 scripts/enhanced_import.py papers.bib content/papers/ --dry-run
+    python3 scripts/enhanced_import.py talks.bib content/talks/ --dry-run
 else
-    academic import papers.bib content/papers/ --compact --verbose --normalize
-    academic import talks.bib content/talks/ --compact --verbose --normalize
+    echo "Importing with enhanced script (preserving existing customizations)"
+    python3 scripts/enhanced_import.py papers.bib content/papers/ --preserve
+    python3 scripts/enhanced_import.py talks.bib content/talks/ --preserve
 fi
 
 # Loop over all .md files in this directory and all subdirectories
