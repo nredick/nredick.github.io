@@ -14,9 +14,9 @@
     weight     = 12
 
 [[main]]
-    identifier = "notes"
-    name       = "Notes"
-    pageRef    = "notes"
+    identifier = "code"
+    name       = "Code"
+    pageRef    = "code"
     parent     = "posts"
     weight     = 20
 

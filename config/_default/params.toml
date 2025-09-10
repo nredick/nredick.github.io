@@ -41,7 +41,7 @@ verification                  = {}
     layout                 = "academic"
     layoutBackgroundBlur   = false
     showMoreLink           = false
-    showMoreLinkDest       = "/notes/"
+    showMoreLinkDest       = "/posts/"
     showRecent             = false
     showRecentItems        = 5
 
