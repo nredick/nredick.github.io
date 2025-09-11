@@ -8,6 +8,9 @@ education:
   - degree: "BA in Computer Science"
     institution: "McGill University"
     year: "2019–2023"
+    description: |
+      - Minor in Earth & Planetary Sciences
+      - Supplementary minor concentration in data science/ML
 ---
 
 I am a graduate student at the University of California, Davis in the geodynamics lab. Currently, I am working on improving slab shape models of the Cascadia subduction zone by linking predictions of the mantle flow around the slab from geodynamic models to seismic observations.

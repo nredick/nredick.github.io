@@ -105,7 +105,7 @@
                     </section>
 
                     <!-- Education Section -->
-                    <section>
+                    <section class="education-section">
                         <div class="text-lg font-bold mb-3">Education</div>
                         <!-- You can add education content here or pull from front matter -->
                         {{ with .Params.education }}
@@ -117,7 +117,7 @@
                                 <div class="text-sm text-neutral-600 dark:text-neutral-400">{{ .institution }} • {{
                                     .year }}</div>
                                 {{ with .description }}
-                                <div class="text-sm">{{ . }}</div>
+                                <div class="text-sm">{{ . | markdownify | safeHTML }}</div>
                                 {{ end }}
                             </div>
                         </div>

@@ -264,3 +264,16 @@ article:has(.hugo-shortcode-gallery) .max-w-prose {
 .hugo-shortcode-gallery .justified-gallery {
     width: 100% !important;
 }
+
+/* Reduce spacing around bullet points in education descriptions only */
+.education-section .text-sm ul {
+    margin: 0;
+    margin-top: 0.2rem;
+    padding-left: 1rem;
+}
+
+.education-section .text-sm ul li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
