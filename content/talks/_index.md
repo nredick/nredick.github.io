@@ -9,4 +9,5 @@ cascade:
   showWordCount: false
   showTaxonomies: true
   showEdit: false
+  showTableOfContents: false
 ---

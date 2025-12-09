@@ -277,3 +277,11 @@ article:has(.hugo-shortcode-gallery) .max-w-prose {
     padding: 0;
     line-height: 1.2;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 1024px) {
+    .publication-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
