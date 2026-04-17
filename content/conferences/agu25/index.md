@@ -1,6 +1,6 @@
 ---
 title: "Understanding Seismic Anisotropy Observations in the Context of 3D Slab-Induced Flow in the Cascadia Subduction Zone"
-date: 2025-12-09 # todo update later to 19
+date: 2025-12-19
 # draft: false
 
 authors:
@@ -13,8 +13,11 @@ talk_type: Poster Presentation
 venue: Hall EFG (Poster Hall) (NOLA CC)
 
 links:
+  - icon: fa-file-pdf
+    url: agu2025.pdf
   - name: "AGU Program Page"
     url: "https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1986081"
+
 ---
 
 ## Abstract
